@@ -1,7 +1,7 @@
 #building{
     color: #fff;
     background-image: url('/img/building.png');
-    background-color: #000;
+    background-color: rgb(255, 153, 0);
     height: 35rem; 
     background-position: center;
     background-repeat: no-repeat;
