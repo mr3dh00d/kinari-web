@@ -1,0 +1,14 @@
+#test nav.navbar{
+    background-color: #000;
+}
+#test .navbar a.nav-link{
+    color: #f0f ;
+}
+#test i.logo-icon{
+    background-image: url('/img/logo-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
+    background-size: 3rem;
+}

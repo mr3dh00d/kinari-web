@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::domain('admin.' . env('APP_URL'))->group(function () {
+    Route::get('/', function () {
+        return 'listo, tu primer subdominio';
+    });
+});
 
 Route::get('/', function () {
-    return view('building');
+    return view('test');
 });
+
