@@ -19,5 +19,5 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
 });
 
 Route::get('/', function () {
-    return view('building');
+    return view('pagina');
 });
