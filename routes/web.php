@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 Route::domain('admin.' . env('APP_URL'))->group(function () {
     Route::get('/', function () {
-        return 'listo, tu primer subdominio';
+        return view('building-prueba');
     });
 });
 
 Route::get('/', function () {
-    return view('test');
+    return view('building');
 });
-

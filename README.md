@@ -1,2 +1,2 @@
-# Software Engineering I Project
-This is the project for the course "Software Engineering I" of the Computer Civil Engineering career at the Andrés Bello University, it consists of an e-commerce website for a sushi shop
+# Proyecto de Ingeniería de Software I
+Este es el proyecto para la asignatura "Ingeniería de Software I" de la carrera de Ingeniería Civil Informática de la Universidad Andrés Bello, consiste en un sitio web de e-commerce para una local de sushi.
