@@ -6,7 +6,7 @@
 
 @section('header')
     <nav class="navbar navbar-expand-lg navbar-black bg-black">
-    <img src="/img/logo_sushi.jpg" class="img-fluid" alt="" width="150" >
+    <img src="/img/logo-icon-cut.png" class="img-fluid" alt="" width="150" >
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,4 +36,12 @@
         </div>
     </div>
     </nav>
+@endsection
+
+@section('content')
+    <div class="container">
+        <div class="box">
+            <h3>Hola Chun</h3>
+        </div>
+    </div>
 @endsection

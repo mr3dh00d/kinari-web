@@ -12,3 +12,26 @@ a.nav-link{
     color: #fff;
 }
 
+.box{
+    padding: 5rem;
+    background-color: #f00;
+    transition-duration: 1000ms;
+}
+
+.box:hover{
+    background-color: yellow;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.nav-link{
+    border-radius: 1.5rem;
+    transition-duration: 500ms !important;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #fff !important;
+    background-color: #f00;
+    border-radius: 1.5rem;
+    transition-duration: 500ms;
+}
