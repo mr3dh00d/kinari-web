@@ -7,15 +7,20 @@
 
 @section('content')
 <main class="form-signin">
-    <form>
+    <form method="POST" action="/authenticate">
+      @csrf
       <img class="mb-4 img-logo" src="/img/logo.png" alt="">
-  
+      @error('email')
+        <div class="invalid-feedback d-block">
+          {{$message}}
+        </div>
+      @enderror
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="name@example.com" required value="{{old('email')}}">
         <label for="floatingInput">Correo</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control @error('email') is-invalid @enderror" id="password" name="password" placeholder="Password" required>
         <label for="floatingPassword">Contraseña</label>
       </div>
       <button class="w-100 btn btn-lg btn-signin" type="submit">Ingresa</button>

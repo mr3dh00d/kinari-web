@@ -53,6 +53,10 @@ body#adminSignin {
         z-index: 2;
     }
 
+    .form-signin input.form-control.is-invalid{
+        border: 0.1rem #dc3545 solid;
+    }
+
     .form-signin input{
         background-color: #303030;
         color: #fff;
