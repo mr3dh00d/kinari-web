@@ -20,7 +20,7 @@
     <!--Title-->
     <title>@yield('title')</title>
   </head>
-  <body id="@yield('idBody')">
+  <body id="@yield('idBody')" class="@yield('classBody')">
 
     @yield('header')
 

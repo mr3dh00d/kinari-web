@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::domain('admin.' . env('APP_URL'))->group(function () {
     Route::get('/', function () {
-        return view('building-prueba');
+        return view('admin.signin');
     });
 });
 

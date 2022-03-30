@@ -6,7 +6,7 @@
 
 @section('header')
     <nav class="navbar navbar-expand-lg navbar-black bg-black">
-    <img src="/img/logo-icon-cut.png" class="img-fluid" alt="" width="150" >
+    <img src="/img/logo.png" class="img-fluid" alt="" width="150" >
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
