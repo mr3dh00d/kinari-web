@@ -14,9 +14,9 @@ use App\Http\Controllers\AdminLoginController;
 |
 */
 Route::domain('admin.' . env('APP_URL'))->group(function () {
-    Route::get('/logout', [AdminLoginController::class, 'logOut'])->name('logout');
-    Route::post('/authenticate', [AdminLoginController::class, 'authenticate']);
     Route::get('/login', [AdminLoginController::class, 'index']);
+    Route::post('/authenticate', [AdminLoginController::class, 'authenticate']);
+    Route::get('/logout', [AdminLoginController::class, 'logOut'])->name('logout');
     Route::middleware(['is_admin'])->group(function () {
         Route::get('/', function() {
             return view('building-prueba');
