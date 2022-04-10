@@ -3,9 +3,9 @@
 :root {
     --header-height: 3rem;
     --nav-width: 68px;
-    --first-color: #4723D9;
-    --first-color-light: #AFA5D9;
-    --white-color: #F7F6FB;
+    --first-color: #a31010;
+    --first-color-light: #363344;
+    --white-color: #000000;
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
     --z-fixed: 100
@@ -178,5 +178,18 @@ a {
 
     .body-pd {
         padding-left: calc(var(--nav-width) + 188px)
-    }
+    }  
+}
+
+.content{
+    margin-top: 8rem;
+}
+
+#body-pd i.logo-icon{
+    background-image: url('/img/logo-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
+    background-size: 3rem;
 }
