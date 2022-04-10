@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminLoginController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,11 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
     Route::post('/authenticate', [AdminLoginController::class, 'authenticate']);
     Route::get('/logout', [AdminLoginController::class, 'logOut'])->name('logout');
     Route::middleware(['is_admin'])->group(function () {
-        Route::get('/', function() {
+        Route::get('/', function(Request $request) {
             return view('building-prueba');
+        });
+        Route::get('/products', function(Request $request) {
+            return view('lista');
         });
     });
 });

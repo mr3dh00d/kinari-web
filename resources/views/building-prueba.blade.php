@@ -46,6 +46,6 @@
     </div>
     <!--Container Main start-->
     <div class="bg-light content">
-        @include('lista')
+        @yield('sub-content')
     </div>
     <!--Container Main end-->
