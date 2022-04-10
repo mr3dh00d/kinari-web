@@ -82,3 +82,48 @@ footer{
 div.text-center.text-light.p-3{
     border-top: rgb(165, 0, 0) 5px solid;
 }
+.carousel-item{
+    max-height: 400px;
+}
+
+.carousel{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.texto_central{
+    font-family: 'Kaushan Script';
+    margin-top: 15px;
+    font-size: 45px;
+}
+
+.card-img-top{
+    max-height: 235px;
+    max-width: 235px;
+}
+
+.container_footer .container{
+    margin-left: 0;
+}
+
+.container_footer{
+    border-top: 1rem solid red;
+    background-color: black;
+    font-family: 'Kaushan Script';
+    font-size: 35px; 
+}
+
+.text_muted{
+    margin-left: 100px;
+    color: white;
+    font-size: 20px;
+}
+
+footer .col h5{
+    color: red;
+    font-size: 35px;
+}
+
+footer .col a{
+    color: white !important;
+}

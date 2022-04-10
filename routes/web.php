@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('pagina');
+});
+
+Route::get('/carta', function () {
     return view('carta');
 });
