@@ -4,6 +4,7 @@
     background-color: rgb(0, 0, 0);
     background-position: center;
     background-repeat: no-repeat;
+    border-bottom: rgb(165, 0, 0) 15px solid;
     font-family: 'Kaushan Script';
     font-size: 30px;
 }
@@ -11,4 +12,73 @@
 a.nav-link{
     color: #fff;
 }
+.nav-link:hover, .nav-link:focus{
+    color: rgb(165, 0, 0) !important;
+}
 
+a.btn.btn-link.btn-floating.btn-lg.m-1{
+    color: #fff;
+}
+
+button.btn-outline-success {
+    color: rgb(165, 0, 0);
+    border-color: rgb(165, 0, 0);
+}
+.btn-outline-success:hover {
+    color: #fff !important;
+    background-color: rgb(165, 0, 0) !important;
+    border-color: rgb(165, 0, 0) !important;
+}
+
+#menu{
+    color: #fff;
+    height: 90px;
+    background-color: rgb(165, 0, 0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+.btn-outline-light{
+    border-color: rgb(165, 0, 0) !important;
+}
+.btn-outline-light:hover{
+    color: #fff !important;
+    background-color: rgb(100, 0, 0) !important;
+    border-color: #fff;
+    border-radius: 30px;
+    transition-duration: 500ms;
+}
+.btn-check:focus + .btn, .btn:focus {
+    box-shadow: none !important;
+}
+.btn-check:focus + .btn-outline-light, .btn-outline-light:focus{
+    box-shadow: none !important;
+}
+
+#productos{
+    color: rgb(75, 75, 75);
+    background-color: rgb(245, 245, 245);
+    box-shadow: rgb(155, 155, 155);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+hr.rounded {
+    border-top: 8px solid rgb(75, 75, 75);
+    border-radius: 5px;
+  }
+
+footer{
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: rgb(165, 0, 0) 15px solid;
+    font-family: 'Kaushan Script';
+    text-decoration: none;
+}
+
+div.text-center.text-light.p-3{
+    border-top: rgb(165, 0, 0) 5px solid;
+}
