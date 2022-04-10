@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,8 @@ Route::get('/', function () {
     return view('building-prueba');
 });
 
+Route::resource('/productos', Controllers\ProductsController::class);
+
 Route::get('/settings', function () {
     return view('building-prueba');
-});
-
-Route::get('/productos', function () {
-    return view('listaprod');
 });
