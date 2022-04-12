@@ -1,10 +1,13 @@
+:root{
+    --red: rgb(165, 0, 0);
+}
 .navbar{
     color: #fff;
     /* min-height: 10rem; */
     background-color: rgb(0, 0, 0);
     background-position: center;
     background-repeat: no-repeat;
-    border-bottom: rgb(165, 0, 0) 15px solid;
+    border-bottom: var(--red) 15px solid;
     font-family: 'Kaushan Script';
     font-size: 30px;
 }
@@ -13,36 +16,40 @@ a.nav-link{
     color: #fff;
 }
 .nav-link:hover, .nav-link:focus{
-    color: rgb(165, 0, 0) !important;
+    color: var(--red) !important;
 }
 
 a.btn-footer-link{
     color: #fff;
     text-decoration: none;
 }
+a.btn-footer-link:hover{
+    color: var(--red);
+}
 
 button.btn-outline-success {
-    color: rgb(165, 0, 0);
-    border-color: rgb(165, 0, 0);
+    color: var(--red);
+    border-color: var(--red);
 }
 .btn-outline-success:hover {
     color: #fff !important;
-    background-color: rgb(165, 0, 0) !important;
-    border-color: rgb(165, 0, 0) !important;
+    background-color: var(--red) !important;
+    border-color: var(--red) !important;
 }
 
 #menu{
     color: #fff;
     height: 90px;
-    background-color: rgb(165, 0, 0);
+    background-color: var(--red);
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
     font-size: 25px;
 }
+
 .btn-outline-light{
-    border-color: rgb(165, 0, 0) !important;
+    border-color: var(--red) !important;
 }
 .btn-outline-light:hover{
     color: #fff !important;
@@ -75,13 +82,13 @@ footer{
     background-color: rgb(0, 0, 0);
     background-position: center;
     background-repeat: no-repeat;
-    border-top: rgb(165, 0, 0) 15px solid;
+    border-top: var(--red) 15px solid;
     font-family: 'Kaushan Script';
     text-decoration: none;
 }
 
 div.text-center.text-light.p-3{
-    border-top: rgb(165, 0, 0) 5px solid;
+    border-top: var(--red) 5px solid;
 }
 .carousel-item{
     max-height: 400px;
@@ -103,28 +110,8 @@ div.text-center.text-light.p-3{
     max-width: 235px;
 }
 
-.container_footer .container{
-    margin-left: 0;
-}
-
-.container_footer{
-    border-top: 1rem solid red;
-    background-color: black;
-    font-family: 'Kaushan Script';
-    font-size: 35px; 
-}
-
 .text_muted{
     margin-left: 100px;
     color: white;
     font-size: 20px;
-}
-
-footer .col h5{
-    color: red;
-    font-size: 35px;
-}
-
-footer .col a{
-    color: white !important;
 }

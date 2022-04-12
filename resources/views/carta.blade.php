@@ -6,13 +6,13 @@
 
 @section('header')
     <header>
-        @include('elements.navbar', ['status' => 'complete'])
+        @include('elements.navbar')
     </header>
 @endsection
 
 @section('content')
     <section>
-        <div id="menu" class="container">
+        <div id="menu" class="container m-bottom-3">
             <div class="row align-items-center">
                 <div class="col-auto me-auto">
                     <button type="button" class="btn btn-outline-light">
@@ -164,6 +164,7 @@
         </div>
     </section>
 @endsection
+
 @section('footer')
     @include('elements.footer')
 @endsection
