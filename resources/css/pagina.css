@@ -1,6 +1,6 @@
 .navbar{
     color: #fff;
-    height: 150px;
+    /* min-height: 10rem; */
     background-color: rgb(0, 0, 0);
     background-position: center;
     background-repeat: no-repeat;
@@ -16,8 +16,9 @@ a.nav-link{
     color: rgb(165, 0, 0) !important;
 }
 
-a.btn.btn-link.btn-floating.btn-lg.m-1{
+a.btn-footer-link{
     color: #fff;
+    text-decoration: none;
 }
 
 button.btn-outline-success {

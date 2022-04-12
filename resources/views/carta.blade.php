@@ -5,44 +5,11 @@
 @section('idBody', 'carta')
 
 @section('header')
-<header>
-    <nav class="navbar navbar-expand-lg navbar-black bg-black">
-    <img src="/img/logo.jpg" class="img-fluid" alt="" width="130" >
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"> 
-            <a class="nav-link active" aria-current="page" href="#">
-                <img src="/img/campana_blanca.png" class="img-fluid" alt="" width="40" class="d-inline-block align-text-top">
-                Menú</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">
-                <img src="/img/local_blanco.png" class="img-fluid" alt="" width="40" class="d-inline-block align-text-top">
-                Local</a>
-            </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="/img/ingresar_blanco.png" class="img-fluid" alt="" width="40" class="d-inline-block align-text-top">
-                Cuenta</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Iniciar Sesion</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Registrarse</a></li>
-            </ul>
-        </ul>
-        <form class="d-flex" >
-            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar...">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-        </div>
-    </div>
-    </nav> 
-</header>
+    <header>
+        @include('elements.navbar', ['status' => 'complete'])
+    </header>
 @endsection
+
 @section('content')
     <section>
         <div id="menu" class="container">
@@ -198,15 +165,5 @@
     </section>
 @endsection
 @section('footer')
-    <footer>
-    <div class="container">
-        <img src="/img/logo.jpg" class="img-fluid" alt="" width="130" >
-        <a class="btn btn-link btn-floating btn-lg m-1" href="https://www.instagram.com/kinari.sushi/?hl=es-la" role="button" data-mdb-ripple-color="dark">
-            <img src="/img/instagram.png" class="img-fluid" alt=""class="d-inline-block align-text-top" width="50">@kinari.sushi</a>
-        <a><img src="/img/wsp.png" class="img-fluid" alt=""class="d-inline-block align-text-top" width="50">+569 9 **** ****</a>
-    </div>
-    <div class="text-center text-light p-3" style="background-color: rgb(0, 0, 0);">
-      © 2022 Kinari Sushi. Todos los derechos reservados.
-    </div>
-    </footer>
+    @include('elements.footer')
 @endsection
