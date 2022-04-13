@@ -1,30 +1,24 @@
 :root{
     --red: rgb(165, 0, 0);
 }
+
+body{
+    background-color: #131313 !important;
+    color: #fff !important;
+}
+.ff-kaushan{
+    font-family: 'Kaushan Script' !important;
+}
 .navbar{
     color: #fff;
-    /* min-height: 10rem; */
-    background-color: rgb(0, 0, 0);
-    background-position: center;
-    background-repeat: no-repeat;
-    border-bottom: var(--red) 15px solid;
-    font-family: 'Kaushan Script';
-    font-size: 30px;
-}
-
-a.nav-link{
-    color: #fff;
+    border-bottom: var(--red) .2rem solid;
+    font-size: 1.5rem;
 }
 .nav-link:hover, .nav-link:focus{
     color: var(--red) !important;
 }
-
-a.btn-footer-link{
-    color: #fff;
-    text-decoration: none;
-}
-a.btn-footer-link:hover{
-    color: var(--red);
+body#home .container.home-content{
+    min-height: 65vh;
 }
 
 button.btn-outline-success {
@@ -75,43 +69,70 @@ button.btn-outline-success {
 hr.rounded {
     border-top: 8px solid rgb(75, 75, 75);
     border-radius: 5px;
-  }
-
+}
 footer{
     color: #fff;
     background-color: rgb(0, 0, 0);
     background-position: center;
     background-repeat: no-repeat;
-    border-top: var(--red) 15px solid;
-    font-family: 'Kaushan Script';
+    border-top: var(--red) .2rem solid;
     text-decoration: none;
 }
-
-div.text-center.text-light.p-3{
-    border-top: var(--red) 5px solid;
+a.footer-btn-link{
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+}
+a.footer-btn-link:hover{
+    color: var(--red);
+}
+.footer-bottom{
+    border-top: var(--red) .1rem solid;
+    font-size: .8rem;
+}
+.carousel-inner{
+    border-radius: .5rem;
+}
+.logo-navbar{
+    width: 4rem;
+}
+.logo-footer{
+    width: 6rem;
 }
 .carousel-item{
-    max-height: 400px;
+    height: 10rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
-.carousel{
-    margin-left: 200px;
-    margin-right: 200px;
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .carousel-item{
+        height: 15rem;
+    }   
 }
-
-.texto_central{
-    font-family: 'Kaushan Script';
-    margin-top: 15px;
-    font-size: 45px;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .carousel-item{
+        height: 20rem;
+    }
+    .logo-navbar{
+        width: 5rem;
+    }
+    .logo-footer{
+        width: 8rem;
+    }
+    a.footer-btn-link{
+        font-size: 1.5rem;
+    }
+    .footer-bottom{
+        font-size: 1rem;
+    }
 }
-
-.card-img-top{
-    max-height: 235px;
-    max-width: 235px;
-}
-
-.text_muted{
-    margin-left: 100px;
-    color: white;
-    font-size: 20px;
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .carousel-item{
+        height: 25rem;
+    }   
 }
