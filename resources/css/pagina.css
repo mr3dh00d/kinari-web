@@ -90,32 +90,47 @@ a.footer-btn-link:hover{
     border-top: var(--red) .1rem solid;
     font-size: .8rem;
 }
-.carousel-inner{
-    border-radius: .5rem;
-}
 .logo-navbar{
     width: 4rem;
 }
 .logo-footer{
     width: 6rem;
 }
-.carousel-item{
-    height: 10rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
+.carousel-inner{
+    border-radius: .5rem;
+    height: 15rem;
+    overflow: hidden;
 }
+.carousel-item img{
+    border-radius: .5rem;
+    width: 100%;
+}
+.home-content.container .carta.row .card{    
+    height: 100%;
+    border: 0;
+    background-color: var(--red);
+}
+.home-content.container .carta.row .card .card-img-top{
+    max-height: 10rem;
+    overflow: hidden;
+}
+/* .home-content.container .carta.row .card .card-img-top img{
+    margin-top: -4rem;
+} */
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .carousel-item{
-        height: 15rem;
+    .carousel-inner{
+        height: 20rem;
+    }
+    .home-content.container .carta.row .card .card-img-top{
+        max-height: 12.5rem;
     }   
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    .carousel-item{
-        height: 20rem;
+    .carousel-inner{
+        height: 25rem;
     }
     .logo-navbar{
         width: 5rem;
@@ -129,10 +144,16 @@ a.footer-btn-link:hover{
     .footer-bottom{
         font-size: 1rem;
     }
+    .home-content.container .carta.row .card .card-img-top{
+        max-height: 15rem;
+    }   
 }
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    .carousel-item{
-        height: 25rem;
-    }   
+    .carousel-inner{
+        height: 30rem;
+    }
+    .home-content.container .carta.row .card .card-img-top{
+        max-height: 15rem;
+    }    
 }
