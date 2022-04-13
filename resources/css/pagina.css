@@ -114,6 +114,10 @@ a.footer-btn-link:hover{
     max-height: 10rem;
     overflow: hidden;
 }
+.row.home-title h2{
+    font-size: 2.25rem;
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
 /* .home-content.container .carta.row .card .card-img-top img{
     margin-top: -4rem;
 } */
@@ -157,3 +161,14 @@ a.footer-btn-link:hover{
         max-height: 15rem;
     }    
 }
+
+@keyframes neon {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px var(--red),
+        0 0 70px var(--red), 0 0 80px var(--red), 0 0 100px var(--red), 0 0 150px var(--red);
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px var(--red),
+        0 0 35px var(--red), 0 0 40px var(--red), 0 0 50px var(--red), 0 0 75px var(--red);
+    }
+  }

@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <div class="row py-1">
+    <div class="row py-3 home-title">
       <div class="col text-center ff-kaushan">
         <h2>¡Conoce nuestra carta!</h2>
       </div>
