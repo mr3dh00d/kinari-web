@@ -1,9 +1,14 @@
 :root{
     --red: rgb(165, 0, 0);
 }
+/* html{
+    scroll-behavior: smooth !important;
+} */
 
 body{
-    background-color: #131313 !important;
+    background-color: #1D1D1D !important;
+    font-family: 'Lato' !important;
+    font-weight: lighter !important;
     color: #fff !important;
 }
 .ff-kaushan{
@@ -33,16 +38,29 @@ button.btn-outline-success {
 
 #menu{
     color: #fff;
-    height: 90px;
+    /* height: 90px; */
     background-color: var(--red);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 25px;
+    /* border-radius: 5px; */
+    font-size: 1rem;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
-
-.btn-outline-light{
+#menu a {
+	color: #fff;
+	text-decoration: none;
+}
+.category-name{
+    min-width: 10rem;
+    width: auto !important;
+    border-radius: 2rem;
+    transition-duration: 500ms;
+}
+.category-name:hover{
+    background-color: rgb(100, 0, 0);
+}
+/* .btn-outline-light{
     border-color: var(--red) !important;
 }
 .btn-outline-light:hover{
@@ -57,28 +75,37 @@ button.btn-outline-success {
 }
 .btn-check:focus + .btn-outline-light, .btn-outline-light:focus{
     box-shadow: none !important;
-}
+} */
 
 #productos{
-    color: rgb(75, 75, 75);
+    background-color: #151515;
+    border: solid .1rem var(--red);
+    /* color: rgb(75, 75, 75);
     background-color: rgb(245, 245, 245);
     box-shadow: rgb(155, 155, 155);
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
 }
-hr.rounded {
+/* hr.rounded {
     border-top: 8px solid rgb(75, 75, 75);
     border-radius: 5px;
+} */
+.section-tittle{
+    animation: neon 1.5s ease-in-out infinite alternate;
 }
-#secciones{
-    padding: 5px;
+.section-tittle h2{
+    font-size: 1.8rem;
+}
+.section-tittle .line{
+    height: .25rem;
+    border-radius: 1rem;
+    background-color: var(--red);
 }
 .card.h-100{
     border-radius: 4px;
 }
 .estilo-img{
-    height: 130px;
-    border-radius: 4px;
+    height: 8rem;
     object-fit: cover;
 }
 .btn-outline-danger{
@@ -89,10 +116,12 @@ hr.rounded {
     border-color: var(--red) !important;
 }
 
+nav, footer{
+    background-color: #000;
+}
 
 footer{
     color: #fff;
-    background-color: rgb(0, 0, 0);
     background-position: center;
     background-repeat: no-repeat;
     border-top: var(--red) .2rem solid;
@@ -142,6 +171,38 @@ a.footer-btn-link:hover{
     margin-top: -4rem;
 } */
 
+.section-content .row .col {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.section-content .card {
+	border: 0;
+	border-radius: 0;
+	background: #080808;
+}
+
+.section-content .card .card-body{
+	min-height: 9rem;
+}
+
+.section-content .card .card-text{
+    /* white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden */
+    margin-bottom: 2rem;
+}
+.section-content .card .card-body .product-price {
+	background-color: var(--red);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .carousel-inner{
@@ -184,11 +245,22 @@ a.footer-btn-link:hover{
 
 @keyframes neon {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px var(--red),
-        0 0 70px var(--red), 0 0 80px var(--red), 0 0 100px var(--red), 0 0 150px var(--red);
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px var(--red),
+        0 0 30px var(--red),
+        0 0 40px var(--red),
+        0 0 60px var(--red),
+        0 0 80px var(--red);
     }
     to {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px var(--red),
-        0 0 35px var(--red), 0 0 40px var(--red), 0 0 50px var(--red), 0 0 75px var(--red);
+      text-shadow:
+        0 0 5px #fff,
+        0 0 20px var(--red),
+        0 0 25px var(--red),
+        0 0 30px var(--red),
+        0 0 35px var(--red),
+        0 0 40px var(--red);
     }
   }

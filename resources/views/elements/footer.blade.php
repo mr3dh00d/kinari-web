@@ -1,4 +1,4 @@
-<footer class="mt-5 ff-kaushan">
+<footer class="ff-kaushan">
     <div class="container py-3">
         <div class="row align-items-center">
             <div class="col-12 text-center col-md-auto">
