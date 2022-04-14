@@ -12,8 +12,8 @@
 
 @section('content')
     <section>
-        <div id="menu" class="container m-bottom-3">
-            <div class="row align-items-center">
+        <div id="menu" class="container m-bottom-3 middle align-middle">
+            <div class="m-bottom-3 row middle align-items-center">
                 <div class="col-auto me-auto">
                     <button type="button" class="btn btn-outline-light">
                         <img src="/img/promo.png" alt="" width="50" class="d-inline-block align-text-center">
@@ -40,129 +40,200 @@
                 </div>
             </div>
         </div>
-        <div id="productos" class="container">
-            <div id="Promo" class="row middle section-tittle align-items-center">
-                <div class="col-auto me-auto"><h2>Promociones</h2></div>
-                <div class="col"><hr class="rounded"></div>
-            </div>
-            <div class="row middle align-items-center">
-                <div class="col-auto me-auto">
-                    <div class="card" style="width: 18rem;">
-                        <img src="/img/Lima.jpg" class="card-img-top" alt="" style="width: 15rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Among Us Verde Claro</h5>
-                            <p class="card-text">
-                              Lima, a veces erróneamente llamado Verde Claro, es uno de los colores en Among Us. Lima está en la menor cantidad de material gráfico promocional de todos los colores disponibles.
-                            </p>
-                          <a href="#" class="btn btn-outline-secondary">SUS?</a>
-                        </div>
-                      </div>
+        <div id="productos" class="container m-bottom-3">
+          <div id="Promo" class="row middle section-tittle align-items-center">
+            <div class="col-auto me-auto"><h2>Promociones</h2></div>
+            <div class="col"><hr class="rounded"></div>
+          </div>
+          <div id="secciones" class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/promo1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Kinari Promo</h5>
+                  <p class="card-text">Osmanthus wine tastes the same as I remember... But where are those who share the memory?</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$123.456</h6></div>
+                  </div>
                 </div>
-                <div class="col-auto me-auto">
-                    <div class="card" style="width: 18rem;">
-                        <img src="/img/Rojo.jpg" class="card-img-top" alt="" style="width: 15rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Among Us Rojo</h5>
-                            <p class="card-text">
-                                Rojo es uno de los colores en Among Us. Rojo es el color que se utiliza para el impostor en los carteles promocionales del juego.
-                            </p>
-                          <a href="#" class="btn btn-outline-secondary">SUS?</a>
-                        </div>
-                      </div>
-                </div>
+              </div>
             </div>
-            <div id="Sushi" class="row middle section-tittle align-items-center">
-                <div class="col-auto me-auto"><h2>Sushi</h2></div>
-                <div class="col"><hr class="rounded"></div>
-            </div>
-            <div class="row middle align-items-center">
-                <div class="col-auto me-auto">
-                    <div class="card" style="width: 18rem;">
-                        <img src="/img/Naranja.jpg" class="card-img-top" alt="" style="width: 15rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Among Us Naranjo</h5>
-                            <p class="card-text">
-                                Naranja es uno de los colores en Among Us. En la billetera que se ve en las tareas Pasar tarjeta e Introducir id., hay una imagen de verde, naranja y Cian en una imagen que se asemeja a una familia.
-                            </p>
-                          <a href="#" class="btn btn-outline-secondary">SUS?</a>
-                        </div>
-                      </div>
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/promo2.jpg" class="card-img-top-center">
+                <div class="card-body">
+                  <h5 class="card-title">Promo 60 Piezas</h5>
+                  <p class="card-text">My family must be able to see it too. I hope my siblings are well... And I hope that they have turned out to be formidable warriors too.</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$123.456</h6></div>
+                  </div>
                 </div>
-                <div class="col-auto me-auto">
-                    <div class="card" style="width: 18rem;">
-                        <img src="/img/Negro.jpg" class="card-img-top" alt="" style="width: 15rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Among Us Negro</h5>
-                            <p class="card-text">
-                                Negro es uno de los colores principales en Among us. Negro es el personaje utilizado para el icono de Sabotear.
-                            </p>
-                          <a href="#" class="btn btn-outline-secondary">SUS?</a>
-                        </div>
-                      </div>
-                </div>
+              </div>
             </div>
-            <div id="Bebidas" class="row middle section-tittle align-items-center">
-                <div class="col-auto me-auto"><h2>Bebidas</h2></div>
-                <div class="col"><hr class="rounded"></div>
-            </div>
-            <div class="row middle align-items-center">
-                <div class="col-auto me-auto">
-                    <div class="card" style="width: 18rem;">
-                        <img src="/img/Morado.jpg" class="card-img-top" alt="" style="width: 15rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Among Us Morado</h5>
-                            <p class="card-text">
-                                Morado es uno de los colores en Among Us. Hubo un jam de animación con el tema Among Us llamado "The Purple Impostor", que fue presentado por Newgrounds y juzgado por el equipo de Innersloth.
-                            </p>
-                          <a href="#" class="btn btn-outline-secondary">SUS?</a>
-                        </div>
-                      </div>
+          </div>
+          <div id="Sushi" class="row middle section-tittle align-items-center">
+            <div class="col-auto me-auto"><h2>Sushi</h2></div>
+            <div class="col"><hr class="rounded"></div>
+          </div>
+          <div id="secciones" class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/promo1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Tori Roll</h5>
+                  <p class="card-text">Osmanthus wine tastes the same as I remember... But where are those who share the memory?</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$123.456</h6></div>
+                  </div>
                 </div>
-                <div class="col-auto me-auto">
-                    <div class="card" style="width: 18rem;">
-                        <img src="/img/Amarillo.jpg" class="card-img-top" alt="" style="width: 15rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Among Us Amarillo</h5>
-                            <p class="card-text">
-                                Amarillo es uno de los colores principales de Among Us. Este color representa a los jugadores en el mapa de Admin.
-                            </p>
-                          <a href="#" class="btn btn-outline-secondary">SUS?</a>
-                        </div>
-                      </div>
-                </div>
+              </div>
             </div>
-            <div id="Salsas" class="row middle section-tittle align-items-center">
-                <div class="col-auto me-auto"><h2>Salsas</h2></div>
-                <div class="col"><hr class="rounded"></div>
-            </div>
-            <div class="row middle align-items-center">
-                <div class="col-auto me-auto">
-                    <div class="card" style="width: 18rem;">
-                        <img src="/img/Verde.jpg" class="card-img-top" alt="" style="width: 15rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Among Us Verde</h5>
-                            <p class="card-text">
-                                Verde es uno de los colores de Among Us. Verde era Un Impostor en uno de los carteles promocionales de Among Us.
-                            </p>
-                          <a href="#" class="btn btn-outline-secondary">SUS?</a>
-                        </div>
-                      </div>
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/promo2.jpg" class="card-img-top-center">
+                <div class="card-body">
+                  <h5 class="card-title">Ebi Roll</h5>
+                  <p class="card-text">My family must be able to see it too. I hope my siblings are well... And I hope that they have turned out to be formidable warriors too.</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$123.456</h6></div>
+                  </div>
                 </div>
-                <div class="col-auto me-auto">
-                    <div class="card" style="width: 18rem;">
-                        <img src="/img/Blanco.jpg" class="card-img-top" alt="" style="width: 15rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Among Us Blanco</h5>
-                            <p class="card-text">
-                                Blanco es uno de los colores en Among Us. Blanco se utiliza en todos los iconos destinados a representar juegos en línea. También se muestran usando un megáfono en la página de anuncios del juego.
-                            </p>
-                          <a href="#" class="btn btn-outline-secondary">SUS?</a>
-                        </div>
-                      </div>
-                </div>
+              </div>
             </div>
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/promo2.jpg" class="card-img-top-center">
+                <div class="card-body">
+                  <h5 class="card-title">Sake Roll</h5>
+                  <p class="card-text">Pff, real men don't carry umbrellas... Oh boy, wow, it's really starting to pick up. Uh quick, c'mon, get yours out! C'mon, quick, quick, quick!</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$123.456</h6></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="Bebidas" class="row middle section-tittle align-items-center">
+            <div class="col-auto me-auto"><h2>Bebidas</h2></div>
+            <div class="col"><hr class="rounded"></div>
+          </div>
+          <div id="secciones" class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/cocacola.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Coca-Cola</h5>
+                  <p class="card-text">Osmanthus wine tastes the same as I remember... But where are those who share the memory?</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$500</h6></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/fanta.jpg" class="card-img-top-center">
+                <div class="card-body">
+                  <h5 class="card-title">Fanta</h5>
+                  <p class="card-text">My family must be able to see it too. I hope my siblings are well... And I hope that they have turned out to be formidable warriors too.</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$500</h6></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/sprite.png" class="card-img-top-center">
+                <div class="card-body">
+                  <h5 class="card-title">Sprite</h5>
+                  <p class="card-text">Pff, real men don't carry umbrellas... Oh boy, wow, it's really starting to pick up. Uh quick, c'mon, get yours out! C'mon, quick, quick, quick!</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$500</h6></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="Salsas" class="row middle section-tittle align-items-center">
+            <div class="col-auto me-auto"><h2>Salsas</h2></div>
+            <div class="col"><hr class="rounded"></div>
+          </div>
+          <div id="secciones" class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/soya.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Soya Tradicional</h5>
+                  <p class="card-text">Osmanthus wine tastes the same as I remember... But where are those who share the memory?</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$500</h6></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/teriyaki.jpg" class="card-img-top-center">
+                <div class="card-body">
+                  <h5 class="card-title">Teriyaki Tradicional</h5>
+                  <p class="card-text">My family must be able to see it too. I hope my siblings are well... And I hope that they have turned out to be formidable warriors too.</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$500</h6></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img class="estilo-img" src="/img/wasabi.jpg" class="card-img-top-center">
+                <div class="card-body">
+                  <h5 class="card-title">Wasabi Adicional</h5>
+                  <p class="card-text">Pff, real men don't carry umbrellas... Oh boy, wow, it's really starting to pick up. Uh quick, c'mon, get yours out! C'mon, quick, quick, quick!</p>
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-outline-danger"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-add-cart-ecommerce-flatart-icons-outline-flatarticons.png"/></button>
+                    </div>
+                    <div class="col-6"><h6 id="Precio">$500</h6></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+          
     </section>
+
 @endsection
 
 @section('footer')

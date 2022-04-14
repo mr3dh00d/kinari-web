@@ -70,6 +70,26 @@ hr.rounded {
     border-top: 8px solid rgb(75, 75, 75);
     border-radius: 5px;
 }
+#secciones{
+    padding: 5px;
+}
+.card.h-100{
+    border-radius: 4px;
+}
+.estilo-img{
+    height: 130px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+.btn-outline-danger{
+    border-color: var(--red) !important;
+}
+.btn-outline-danger:hover{
+    background-color: var(--red) !important;
+    border-color: var(--red) !important;
+}
+
+
 footer{
     color: #fff;
     background-color: rgb(0, 0, 0);
