@@ -4,29 +4,38 @@
 
 @section('content')
     <header class="header" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"> <img src="/img/smile.png" alt="" width="40" height="40"> </div>
+        <div class="header_toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+        <div class="header_img">
+            {{-- <img src="/img/smile.png" alt="" width="40" height="40"> --}}
+        </div>
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
-            <div> <a href="#" class="nav_logo"> 
-                <i class='logo-icon'></i>
-                <span class="nav_logo-name">Kinari</span>
-            </a>
-                <div class="nav_list">
+            <div>
+                <a href="/" class="nav_logo"> 
+                    <img src="/img/logo.png" alt="logo-kinari" width="100">
+                </a>
+                <div class="nav_list mt-2">
+                    <a href="/" class="nav_link active">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="nav_name">Inicio</span>
+                    </a>
                     <a href="/productos" class="nav_link">
-                        <i class='bx bxs-bowl-rice'></i>
+                        <i class="fa-solid fa-bowl-food"></i>
                         <span class="nav_name">Productos</span>
                     </a>
                     <a href="/settings" class="nav_link"> 
-                    <i class='bx bx-dots-horizontal-rounded'></i>
-                        <span class="nav_name">Settings</span>
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="nav_name">Configuración</span>
+                    </a>
+                    <a href="#" class="nav_link">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span class="nav_name">Cerrar sesión</span>
                     </a>
                 </div>
-            </div> <a href="#" class="nav_link">
-                <i class='bx bx-log-out nav_icon'></i>
-                <span class="nav_name">SignOut</span>
-            </a>
+            </div>
         </nav>
     </div>
     <!--Container Main start-->

@@ -4,7 +4,7 @@
     --header-height: 3rem;
     --nav-width: 68px;
     --first-color: #a31010;
-    --first-color-light: #363344;
+    --first-color-light: #262626;
     --white-color: #000000;
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
@@ -91,10 +91,6 @@ a {
     align-items: center;
     column-gap: 1rem;
     padding: .5rem 0 .5rem 1.5rem
-}
-
-.nav_logo {
-    margin-bottom: 2rem
 }
 
 .nav_logo-icon {
@@ -185,11 +181,26 @@ a {
     margin-top: 8rem;
 }
 
-#body-pd i.logo-icon{
+.nav_logo{
+    display: block;
+    padding-left: .5rem;
+    justify-content: left;
+    /* margin-bottom: 1.5rem; */
+}
+
+.nav_logo img{
+    max-width: 2.8rem;
+}
+
+.l-navbar a{
+    text-decoration: none;
+}
+
+/* #body-pd i.logo-icon{
     background-image: url('/img/logo-icon.png');
     background-position: center;
     background-repeat: no-repeat;
     width: 3rem;
     height: 3rem;
     background-size: 3rem;
-}
+} */
