@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class SecctionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('Products.index');
+        //secctions->index
+        return view('Secctions.index');
     }
 
     /**
@@ -23,7 +24,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('Products.create');
+        //products->index
+        return view('Secctions.create');
     }
 
     /**
@@ -34,8 +36,7 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //Guardar los datos del producto
-        dd($request);
+        //
     }
 
     /**
@@ -46,7 +47,8 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        return "Holas estes es el productos ".$id;
+        //
+        return view("Products.index");
     }
 
     /**
@@ -57,7 +59,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        return "Editar productos ".$id;
+        //
     }
 
     /**
@@ -69,7 +71,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //Guardar los cambios del producto
+        //
     }
 
     /**
@@ -80,6 +82,6 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //Eliminar producto
+        //
     }
 }

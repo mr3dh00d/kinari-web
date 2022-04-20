@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 Route::resource('/productos', Controllers\ProductsController::class);
+Route::resource('/secciones', Controllers\SecctionsController::class);
+
 
 Route::get('/settings', function () {
     return view('building-prueba');

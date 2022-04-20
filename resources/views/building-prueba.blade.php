@@ -39,7 +39,7 @@
         </nav>
     </div>
     <!--Container Main start-->
-    <div class="bg-dark content">
+    <div class="content">
         @yield('subcontent')
     </div>
     <!--Container Main end-->

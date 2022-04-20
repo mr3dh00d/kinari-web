@@ -2,7 +2,7 @@
 
 :root {
     --header-height: 3rem;
-    --nav-width: 68px;
+    --nav-width: 4rem;
     --first-color: #a31010;
     --first-color-light: #262626;
     --white-color: #000000;
@@ -40,7 +40,7 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    background-color: var(--white-color);
+    background-color: var(--color-base);
     z-index: var(--z-fixed);
     transition: .5s
 }
@@ -95,11 +95,11 @@ a {
 
 .nav_logo-icon {
     font-size: 1.25rem;
-    color: var(--white-color)
+    color: var(--color-base)
 }
 
 .nav_logo-name {
-    color: var(--white-color);
+    color: var(--color-base);
     font-weight: 700
 }
 
@@ -107,11 +107,12 @@ a {
     position: relative;
     color: var(--first-color-light);
     margin-bottom: 1.5rem;
-    transition: .3s
+    transition: .3s;
+    text-decoration: none;
 }
 
 .nav_link:hover {
-    color: var(--white-color)
+    color: var(--color-base)
 }
 
 .nav_icon {
@@ -127,7 +128,7 @@ a {
 }
 
 .active {
-    color: var(--white-color)
+    color: var(--color-base)
 }
 
 .active::before {
@@ -136,7 +137,7 @@ a {
     left: 0;
     width: 2px;
     height: 32px;
-    background-color: var(--white-color)
+    background-color: var(--color-base)
 }
 
 .height-100 {

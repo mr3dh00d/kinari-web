@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap);
 @import url(https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css);
 #building{
-    color: #fff;
+    color: rgb(41, 37, 37);
     background-image: url('/img/building.png');
-    background-color: rgb(255, 153, 0);
+    background-color: #000;
     height: 35rem; 
     background-position: center;
     background-repeat: no-repeat;
@@ -11,10 +11,10 @@
 }
 :root {
     --header-height: 3rem;
-    --nav-width: 68px;
-    --first-color: #4723D9;
-    --first-color-light: #AFA5D9;
-    --white-color: #F7F6FB;
+    --nav-width: 4rem;
+    --first-color: #a31010;
+    --first-color-light: #363344;
+    --color-base: #000000;
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
     --z-fixed: 100
@@ -49,7 +49,7 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    background-color: var(--white-color);
+    background-color: var(--color-base);
     z-index: var(--z-fixed);
     transition: .5s
 }
@@ -110,11 +110,11 @@ a {
 
 .nav_logo-icon {
     font-size: 1.25rem;
-    color: var(--white-color)
+    color: var(--color-base)
 }
 
 .nav_logo-name {
-    color: var(--white-color);
+    color: var(--color-base);
     font-weight: 700
 }
 
@@ -122,11 +122,12 @@ a {
     position: relative;
     color: var(--first-color-light);
     margin-bottom: 1.5rem;
-    transition: .3s
+    transition: .3s;
+    text-decoration: none;
 }
 
 .nav_link:hover {
-    color: var(--white-color)
+    color: var(--color-base)
 }
 
 .nav_icon {
@@ -142,7 +143,7 @@ a {
 }
 
 .active {
-    color: var(--white-color)
+    color: var(--color-base)
 }
 
 .active::before {
@@ -151,7 +152,7 @@ a {
     left: 0;
     width: 2px;
     height: 32px;
-    background-color: var(--white-color)
+    background-color: var(--color-base)
 }
 
 .height-100 {
@@ -189,7 +190,20 @@ a {
 
     .body-pd {
         padding-left: calc(var(--nav-width) + 188px)
-    }
+    }  
+}
+
+.content{
+    margin-top: 8rem;
+}
+
+#body-pd i.logo-icon{
+    background-image: url('/img/logo-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
+    background-size: 3rem;
 }
 @charset "UTF-8";
 /*!

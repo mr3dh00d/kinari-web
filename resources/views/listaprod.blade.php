@@ -2,15 +2,15 @@
 
 @section('subcontent')
 
-<div class="container mt-5" id="lista_prod">
+<div class="container-fluid mt-5" id="lista_prod">
     <div class="row">
         <div class="col">
-            <ul class="list-group">
-                <li class="list-group-item">P1</li>
-                <li class="list-group-item">P2</li>
-                <li class="list-group-item">P3</li>
-                <li class="list-group-item">P4</li>
-                <li class="list-group-item">P5</li>
+            <ul class="list-group"> Secciones
+                <a href="#" class="list-group-item list-group-item-action active">P1</a>
+                <a href="#" class="list-group-item list-group-item-action active">P2</a>
+                <a href="#" class="list-group-item list-group-item-action active">P3</a>
+                <a href="#" class="list-group-item list-group-item-action active">P4</a>
+                <a href="#" class="list-group-item list-group-item-action active">P5</a>
             </ul>
         </div>
     </div>
@@ -34,28 +34,33 @@ data-bs-target="id"
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="crear-prod" method="POST">
+            @csrf
             <div class="mb-3">
                 <label for="nombre_prod" class="col-form-label">Nombre:</label>
-                <input type="text" class="form-control" id="nombre_prod">
+                <input type="text" class="form-control" id="nombre_prod" name="nombre_prod">
+            </div>
+            <div class="mb-3">
+                <label for="img_prod" class="col-form-label"></label>
+                <input type="file" class="form-control" id="img_prod" name="img_prod">
             </div>
             <div class="mb-3">
                 <label for="precio_prod" class="col-form-label">Precio:</label>
-                <input type="text" class="form-control" id="precio_prod">
+                <input type="number" class="form-control" id="precio_prod" name="precio_prod">
             </div>
             <div class="mb-3">
                 <label for="palab_clave" class="col-form-label">Palabras Clave:</label>
-                <input type="text" class="form-control" id="palab_clave">
+                <input type="text" class="form-control" id="palab_clave" name="palab_clave">
             </div>
             <div class="mb-3">
                 <label for="desc_prod" class="col-form-label">Descripción:</label>
-                <input type="text" class="form-control" id="desc_prod">
+                <textarea class="form-control" id="desc_prod" name="desc_prod"></textarea>
             </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary" form="create-product">Guardar</button>
       </div>
     </div>
   </div>
