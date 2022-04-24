@@ -2,46 +2,117 @@
 
 @section('title', 'Kinari - Sushi Bar')
 
-@section('idBody', 'pagina')
+@section('idBody', 'home')
 
 @section('header')
-    <nav class="navbar navbar-expand-lg navbar-black bg-black">
-    <img src="/img/logo.png" class="img-fluid" alt="" width="150" >
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"> 
-            <a class="nav-link active" aria-current="page" href="#"><img src="/img/campana_blanca.png" class="img-fluid" alt="" width="40"> Menú</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#"><img src="/img/local_blanco.png" class="img-fluid" alt="" width="40">Local</a>
-            </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Cuenta
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Iniciar Sesion</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Registrarse</a></li>
-            </ul>
-        </ul>
-        <form class="d-flex" >
-            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar...">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-        </div>
-    </div>
-    </nav>
+  <header>
+    @include('elements.navbar')
+  </header>
 @endsection
 
 @section('content')
-    <div class="container">
-        <div class="box">
-            <h3>Hola Chun</h3>
+  <div class="container my-3 home-content">
+    <div class="row">
+      <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+        <div class="carousel-inner d-flex align-items-center">
+          <div class="carousel-item active">
+            <img src="https://cdn.pixabay.com/photo/2017/10/16/09/00/sushi-2856545_960_720.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2017/10/15/11/41/sushi-2853382_960_720.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2020/04/04/15/07/sushi-5002639_960_720.jpg" class="img-fluid" alt="">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
+
+    <div class="row py-3 home-title">
+      <div class="col text-center ff-kaushan">
+        <h2>¡Conoce nuestra carta!</h2>
+      </div>
+    </div>
+
+    <div class="row carta">
+      <div class="col-12 col-md-6 col-xl-4 py-3">
+        <div class="card">
+          <div class="card-img-top d-flex align-items-center">
+            <img src="https://cdn.pixabay.com/photo/2018/05/19/05/05/empanadas-3412786_960_720.jpg" class="img-fluid">
+          </div>
+          <div class="card-body d-flex align-items-center">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4 py-3">
+        <div class="card">
+          <div class="card-img-top d-flex align-items-center">
+            <img src="https://cdn.pixabay.com/photo/2016/08/31/16/25/sushi-1634013_960_720.jpg" class="img-fluid">
+          </div>
+          <div class="card-body d-flex align-items-center">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4 py-3">
+        <div class="card">
+          <div class="card-img-top d-flex align-items-center">
+            <img src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg" class="img-fluid">
+          </div>
+          <div class="card-body d-flex align-items-center">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4 py-3">
+        <div class="card">
+          <div class="card-img-top d-flex align-items-center">
+            <img src="https://cdn.pixabay.com/photo/2017/10/10/11/37/japan-2836904_960_720.jpg" class="img-fluid">
+          </div>
+          <div class="card-body d-flex align-items-center">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4 py-3">
+        <div class="card">
+          <div class="card-img-top d-flex align-items-center">
+            <img src="https://cdn.pixabay.com/photo/2015/01/12/00/16/sushi-596930_960_720.jpg" class="img-fluid">
+          </div>
+          <div class="card-body d-flex align-items-center">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4 py-3">
+        <div class="card">
+          <div class="card-img-top d-flex align-items-center">
+            <img src="https://cdn.pixabay.com/photo/2017/01/22/17/13/sushi-2000239_960_720.jpg" class="img-fluid">
+          </div>
+          <div class="card-body d-flex align-items-center">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+@endsection
+
+@section('footer')
+  @include('elements.footer')
 @endsection

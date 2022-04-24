@@ -31,3 +31,7 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
 Route::get('/', function () {
     return view('pagina');
 });
+
+Route::get('/carta', function () {
+    return view('carta');
+});

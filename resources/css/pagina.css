@@ -1,17 +1,247 @@
+:root{
+    --red: rgb(165, 0, 0);
+}
+/* html{
+    scroll-behavior: smooth !important;
+} */
+
+body{
+    background-color: #1D1D1D !important;
+    font-family: 'Lato' !important;
+    font-weight: lighter !important;
+    color: #fff !important;
+}
+.ff-kaushan{
+    font-family: 'Kaushan Script' !important;
+}
 .navbar{
     color: #fff;
-    height: 150px;
-    background-color: rgb(0, 0, 0);
+    border-bottom: var(--red) .2rem solid;
+    font-size: 1.5rem;
+}
+.nav-link:hover, .nav-link:focus{
+    color: var(--red) !important;
+}
+body#home .container.home-content{
+    min-height: 65vh;
+}
+
+button.btn-outline-success {
+    color: var(--red);
+    border-color: var(--red);
+}
+.btn-outline-success:hover {
+    color: #fff !important;
+    background-color: var(--red) !important;
+    border-color: var(--red) !important;
+}
+
+#menu{
+    color: #fff;
+    /* height: 90px; */
+    background-color: var(--red);
+    /* border-radius: 5px; */
+    font-size: 1rem;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+#menu a {
+	color: #fff;
+	text-decoration: none;
+}
+.category-name{
+    min-width: 10rem;
+    width: auto !important;
+    border-radius: 2rem;
+    transition-duration: 500ms;
+}
+.category-name:hover{
+    background-color: rgb(100, 0, 0);
+}
+/* .btn-outline-light{
+    border-color: var(--red) !important;
+}
+.btn-outline-light:hover{
+    color: #fff !important;
+    background-color: rgb(100, 0, 0) !important;
+    border-color: #fff;
+    border-radius: 30px;
+    transition-duration: 500ms;
+}
+.btn-check:focus + .btn, .btn:focus {
+    box-shadow: none !important;
+}
+.btn-check:focus + .btn-outline-light, .btn-outline-light:focus{
+    box-shadow: none !important;
+} */
+
+#productos{
+    background-color: #151515;
+    border: solid .1rem var(--red);
+    /* color: rgb(75, 75, 75);
+    background-color: rgb(245, 245, 245);
+    box-shadow: rgb(155, 155, 155);
+    border-radius: 5px;
+    margin-bottom: 20px; */
+}
+/* hr.rounded {
+    border-top: 8px solid rgb(75, 75, 75);
+    border-radius: 5px;
+} */
+.section-tittle{
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+.section-tittle h2{
+    font-size: 1.8rem;
+}
+.section-tittle .line{
+    height: .25rem;
+    border-radius: 1rem;
+    background-color: var(--red);
+}
+.card.h-100{
+    border-radius: 4px;
+}
+.estilo-img{
+    height: 8rem;
+    object-fit: cover;
+}
+.btn-outline-danger{
+    border-color: var(--red) !important;
+}
+.btn-outline-danger:hover{
+    background-color: var(--red) !important;
+    border-color: var(--red) !important;
+}
+
+nav, footer{
+    background-color: #000;
+}
+
+footer{
+    color: #fff;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: 'Kaushan Script';
-    font-size: 30px;
+    border-top: var(--red) .2rem solid;
+    text-decoration: none;
 }
-
-a.nav-link{
+a.footer-btn-link{
+    font-size: 1.2rem;
     color: #fff;
+    text-decoration: none;
+}
+a.footer-btn-link:hover{
+    color: var(--red);
+}
+.footer-bottom{
+    border-top: var(--red) .1rem solid;
+    font-size: .8rem;
+}
+.logo-navbar{
+    width: 4rem;
+}
+.logo-footer{
+    width: 6rem;
+}
+.carousel-inner{
+    border-radius: .5rem;
+    height: 15rem;
+    overflow: hidden;
+}
+.carousel-item img{
+    border-radius: .5rem;
+    width: 100%;
+}
+.home-content.container .carta.row .card{    
+    height: 100%;
+    border: 0;
+    background-color: var(--red);
+}
+.home-content.container .carta.row .card .card-img-top{
+    max-height: 10rem;
+    overflow: hidden;
+}
+.row.home-title h2{
+    font-size: 2.25rem;
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+/* .home-content.container .carta.row .card .card-img-top img{
+    margin-top: -4rem;
+} */
+
+.section-content .row .col {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
 }
 
+.section-content .card {
+	border: 0;
+	border-radius: 0;
+	background: #080808;
+}
+
+.section-content .card .card-body{
+	min-height: 9rem;
+}
+
+.section-content .card .card-text{
+    /* white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden */
+    margin-bottom: 2rem;
+}
+.section-content .card .card-body .product-price {
+	background-color: var(--red);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .carousel-inner{
+        height: 20rem;
+    }
+    .home-content.container .carta.row .card .card-img-top{
+        max-height: 12.5rem;
+    }   
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .carousel-inner{
+        height: 25rem;
+    }
+    .logo-navbar{
+        width: 5rem;
+    }
+    .logo-footer{
+        width: 8rem;
+    }
+    a.footer-btn-link{
+        font-size: 1.5rem;
+    }
+    .footer-bottom{
+        font-size: 1rem;
+    }
+    .home-content.container .carta.row .card .card-img-top{
+        max-height: 15rem;
+    }   
+}
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .carousel-inner{
+        height: 30rem;
+    }
+    .home-content.container .carta.row .card .card-img-top{
+        max-height: 15rem;
+    }    
+}
 .box{
     padding: 5rem;
     background-color: #f00;
@@ -35,3 +265,24 @@ a.nav-link{
     border-radius: 1.5rem;
     transition-duration: 500ms;
 }
+@keyframes neon {
+    from {
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px var(--red),
+        0 0 30px var(--red),
+        0 0 40px var(--red),
+        0 0 60px var(--red),
+        0 0 80px var(--red);
+    }
+    to {
+      text-shadow:
+        0 0 5px #fff,
+        0 0 20px var(--red),
+        0 0 25px var(--red),
+        0 0 30px var(--red),
+        0 0 35px var(--red),
+        0 0 40px var(--red);
+    }
+  }
