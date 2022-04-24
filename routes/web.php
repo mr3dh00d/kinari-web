@@ -25,3 +25,7 @@ Route::resource('/secciones', Controllers\SecctionsController::class);
 Route::get('/settings', function () {
     return view('building-prueba');
 });
+
+Route::get('/carrusel', function () {
+    return view('carrusel');
+});

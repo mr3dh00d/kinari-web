@@ -197,6 +197,35 @@ a {
     text-decoration: none;
 }
 
+.btn-circle.btn-md {
+    width: 50px;
+    height: 50px;
+    padding: 13px 10px;
+    border-radius: 25px;
+    font-size: 10px;
+}
+
+.btn-circle.btn-sm {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    font-size: 8px;
+    text-align: center;
+}
+
+.estilo-img{
+    height: 8rem;
+    object-fit: cover;
+}
+
+.btn.btn-green {
+    color: #fff;
+    background-color: #34c300;
+    border-color: #34c300;
+}
+
+
 /* #body-pd i.logo-icon{
     background-image: url('/img/logo-icon.png');
     background-position: center;
