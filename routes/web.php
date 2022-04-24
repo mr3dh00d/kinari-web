@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminLoginController;
+// use App\Http\Controllers\AdminLoginController;
 use Illuminate\Http\Request;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,16 +16,28 @@ use Illuminate\Http\Request;
 |
 */
 Route::domain('admin.' . env('APP_URL'))->group(function () {
-    Route::get('/login', [AdminLoginController::class, 'index']);
-    Route::post('/authenticate', [AdminLoginController::class, 'authenticate']);
-    Route::get('/logout', [AdminLoginController::class, 'logOut'])->name('logout');
+    Route::get('/login', [Controllers\AdminLoginController::class, 'index']);
+    Route::post('/authenticate', [Controllers\AdminLoginController::class, 'authenticate']);
+    Route::get('/logout', [Controllers\AdminLoginController::class, 'logOut'])->name('logout');
     Route::middleware(['is_admin'])->group(function () {
-        Route::get('/', function(Request $request) {
+        // Route::get('/', function(Request $request) {
+        //     return view('building-prueba');
+        // });
+        // Route::get('/products', function(Request $request) {
+        //     return view('lista');
+        // });
+
+        Route::resource('/productos', Controllers\ProductsController::class);
+        Route::resource('/secciones', Controllers\SecctionsController::class);
+        
+        Route::get('/settings', function () {
             return view('building-prueba');
         });
-        Route::get('/products', function(Request $request) {
-            return view('lista');
+        
+        Route::get('/carrusel', function () {
+            return view('carrusel');
         });
+
     });
 });
 
@@ -35,3 +48,4 @@ Route::get('/', function () {
 Route::get('/carta', function () {
     return view('carta');
 });
+
