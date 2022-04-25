@@ -10,12 +10,12 @@
                     @kinari.sushi
                 </a>
             </div>
-            <div class="col text-center col-md-auto">
+            {{-- <div class="col text-center col-md-auto">
                 <a class="footer-btn-link">
                     <i class="fa-brands fa-whatsapp"></i>
                     +569 9 **** ****
                 </a>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="text-center py-3 footer-bottom">

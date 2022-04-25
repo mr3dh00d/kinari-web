@@ -101,6 +101,15 @@ button.btn-outline-success {
     border-radius: 1rem;
     background-color: var(--red);
 }
+a.card {
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+}
+a.card:hover{
+    color: #fff;
+    cursor: pointer;
+}
 .card.h-100{
     border-radius: 4px;
 }
@@ -166,6 +175,13 @@ a.footer-btn-link:hover{
 .row.home-title h2{
     font-size: 2.25rem;
     animation: neon 1.5s ease-in-out infinite alternate;
+}
+.row.home-title h2 a{
+    color: #fff;
+    text-decoration: none;
+}
+.row.home-title h2 a:hover{
+    color: #fff;
 }
 /* .home-content.container .carta.row .card .card-img-top img{
     margin-top: -4rem;
@@ -260,10 +276,9 @@ a.footer-btn-link:hover{
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: #fff !important;
-    background-color: #f00;
+    color: var(--red) !important;
     border-radius: 1.5rem;
-    transition-duration: 500ms;
+    transition-duration: .25s;
 }
 @keyframes neon {
     from {

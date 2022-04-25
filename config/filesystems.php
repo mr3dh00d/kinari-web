@@ -44,6 +44,20 @@ return [
             'throw' => false,
         ],
 
+        'productos' =>[
+            'driver' => 'local',
+            'root' => env('ROOT_PRODUCTOS', '/var/www/kinari-web/public/img/productos'),
+            'url' => '/img/productos',
+            'visibility' => 'public',
+        ],
+
+        'carrusel' =>[
+            'driver' => 'local',
+            'root' => env('ROOT_CARRUSEL', '/var/www/kinari-web/public/img/carrusel'),
+            'url' => '/img/carrusel',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

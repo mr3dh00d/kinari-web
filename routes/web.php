@@ -20,32 +20,31 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
     Route::post('/authenticate', [Controllers\AdminLoginController::class, 'authenticate']);
     Route::get('/logout', [Controllers\AdminLoginController::class, 'logOut'])->name('logout');
     Route::middleware(['is_admin'])->group(function () {
-        // Route::get('/', function(Request $request) {
+        Route::get('/', [Controllers\AdminPanelController::class, 'index']);
+        Route::resource('/carrusel', Controllers\CarruselController::class);
+        Route::resource('/productos', Controllers\ProductsController::class);
+        Route::post('/productos/cambiar-orden', [Controllers\ProductsController::class, 'cambiarOrden']);
+        Route::resource('/secciones', Controllers\SecctionsController::class);
+        Route::post('/secciones/cambiar-orden', [Controllers\SecctionsController::class, 'cambiarOrden']);
+        
+        // Route::get('/settings', function () {
         //     return view('building-prueba');
         // });
-        // Route::get('/products', function(Request $request) {
-        //     return view('lista');
+        
+        // Route::get('/carrusel', function () {
+        //     return view('carrusel');
         // });
-
-        Route::resource('/productos', Controllers\ProductsController::class);
-        Route::resource('/secciones', Controllers\SecctionsController::class);
-        
-        Route::get('/settings', function () {
-            return view('building-prueba');
-        });
-        
-        Route::get('/carrusel', function () {
-            return view('carrusel');
-        });
 
     });
 });
 
-Route::get('/', function () {
-    return view('pagina');
-});
+Route::get('/', [Controllers\WebsiteController::class, 'home']);
+Route::get('/carta', [Controllers\WebsiteController::class, 'carta']);
 
-Route::get('/carta', function () {
-    return view('carta');
+Route::get('/run-migrations', function () {
+    return Artisan::call('migrate', [
+        '--force' => true,
+        '--seed' => true
+    ]);
 });
 

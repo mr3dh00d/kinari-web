@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.adminbase')
 
 @section('title', 'Ingreso de Administrador')
 

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models;
+use App\Models\Seccion;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class SecctionsController extends Controller
 {
@@ -14,7 +18,9 @@ class SecctionsController extends Controller
     public function index()
     {
         //secctions->index
-        return view('Secctions.index');
+        return view('admin.secctions.index', [
+            'secciones' => Seccion::orderBy('orden')->get()
+        ]);
     }
 
     /**
@@ -25,7 +31,7 @@ class SecctionsController extends Controller
     public function create()
     {
         //products->index
-        return view('Secctions.create');
+        return view('admin.secctions.create');
     }
 
     /**
@@ -36,7 +42,17 @@ class SecctionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|unique:secciones,nombre'
+        ], [
+            'nombre.required' => 'El nombre es requerido',
+            'nombre.unique' => 'El nombre ya esta en uso'
+        ]);
+        $seccion = new Seccion();
+        $seccion->orden = count(Seccion::all());
+        $seccion->nombre = $request->get('nombre');
+        $seccion->save();
+        return redirect('/secciones');
     }
 
     /**
@@ -47,8 +63,9 @@ class SecctionsController extends Controller
      */
     public function show($id)
     {
-        //
-        return view("Products.index");
+        return view("admin.products.index", [
+            'seccion' => Seccion::findOrFail($id)
+        ]);
     }
 
     /**
@@ -59,7 +76,9 @@ class SecctionsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.secctions.edit', [
+            'seccion' => Seccion::findOrFail($id)
+        ]);
     }
 
     /**
@@ -71,7 +90,19 @@ class SecctionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|unique:secciones,nombre'
+        ], [
+            'nombre.required' => 'El nombre es requerido',
+            'nombre.unique' => 'El nombre ya esta en uso'
+        ]);
+
+        $nombre = $request->get('nombre');
+        $seccion = Seccion::findOrFail($id);
+        $seccion->nombre = $nombre;
+        $seccion->save();
+
+        return redirect('/secciones');
     }
 
     /**
@@ -83,5 +114,35 @@ class SecctionsController extends Controller
     public function destroy($id)
     {
         //
+        //dd("esto en aca?");
+        $seccion = Seccion::findOrFail($id);
+        foreach ($seccion->productos as $producto) {
+            $imagen = $producto->imagen;
+            if(count(Models\Imagen::where('nombre', $imagen->nombre)->get()) < 2){
+                Storage::disk('productos')->delete($imagen->nombre);
+            }
+            $imagen->delete();
+            $producto->delete();
+        }
+        $seccion->delete();
+        return redirect('/secciones');
+    }
+
+    public function cambiarOrden(Request $request){
+        $request->validate([
+            'orden' => 'required'
+        ]);
+        $i = 0;
+        foreach ($request->get('orden') as $orden) {
+            $seccion = Seccion::find($orden);
+            if(isset($seccion)){
+                $seccion->orden = $i;
+                $seccion->save();
+                $i++;
+            }
+        }
+        return [
+            'respuesta' => 'OK'
+        ];
     }
 }
