@@ -4,11 +4,12 @@
 
 @section('idBody', 'building')
 
+@section('header')
 {{-- @section('content')
     <div class="container">
         <div class="row">
             <div class="col">
-                adios
+                <img src="/img/logo_sushi.jpg" class="img-thumbnail" alt="">
             </div>
         </div>
     </div>

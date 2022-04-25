@@ -1,11 +1,340 @@
+@import url(https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap);
+@import url(https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css);
+:root {
+    --header-height: 3rem;
+    --nav-width: 68px;
+    --first-color: #4723D9;
+    --first-color-light: #AFA5D9;
+    --white-color: #F7F6FB;
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
+
+body {
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s
+}
+
+a {
+    text-decoration: none
+}
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: var(--white-color);
+    z-index: var(--z-fixed);
+    transition: .5s
+}
+
+.header_toggle {
+    color: var(--first-color);
+    font-size: 1.5rem;
+    cursor: pointer
+}
+
+.header_img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.header_img img {
+    width: 40px
+}
+
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: var(--first-color);
+    padding: .5rem 1rem 0 0;
+    transition: .5s;
+    z-index: var(--z-fixed)
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.nav_logo,
+.nav_link {
+    display: grid;
+    grid-template-columns: -webkit-max-content -webkit-max-content;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem
+}
+
+.nav_logo {
+    margin-bottom: 2rem
+}
+
+.nav_logo-icon {
+    font-size: 1.25rem;
+    color: var(--white-color)
+}
+
+.nav_logo-name {
+    color: var(--white-color);
+    font-weight: 700
+}
+
+.nav_link {
+    position: relative;
+    color: var(--first-color-light);
+    margin-bottom: 1.5rem;
+    transition: .3s
+}
+
+.nav_link:hover {
+    color: var(--white-color)
+}
+
+.nav_icon {
+    font-size: 1.25rem
+}
+
+.show {
+    left: 0
+}
+
+.body-pd {
+    padding-left: calc(var(--nav-width) + 1rem)
+}
+
+.active {
+    color: var(--white-color)
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color)
+}
+
+.height-100 {
+    height: 100vh
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: calc(var(--header-height) + 1rem) 0 0 0;
+        padding-left: calc(var(--nav-width) + 2rem)
+    }
+
+    .header {
+        height: calc(var(--header-height) + 1rem);
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+    }
+
+    .header_img {
+        width: 40px;
+        height: 40px
+    }
+
+    .header_img img {
+        width: 45px
+    }
+
+    .l-navbar {
+        left: 0;
+        padding: 1rem 1rem 0 0
+    }
+
+    .show {
+        width: calc(var(--nav-width) + 156px)
+    }
+
+    .body-pd {
+        padding-left: calc(var(--nav-width) + 188px)
+    }
+}
+#test nav.navbar{
+    background-color: #000;
+}
+#test .navbar a.nav-link{
+    color: #f0f ;
+}
+#test i.logo-icon{
+    background-image: url('/img/logo-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
+    background-size: 3rem;
+}
 #building{
     color: #fff;
     background-image: url('/img/building.png');
-    background-color: #000;
+    background-color: rgb(255, 153, 0);
     height: 35rem; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25rem;
+}
+.navbar{
+    color: #fff;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: rgb(165, 0, 0) 15px solid;
+    font-family: 'Kaushan Script';
+    font-size: 30px;
+}
+
+a.nav-link{
+    color: #fff;
+}
+.nav-link:hover, .nav-link:focus{
+    color: rgb(165, 0, 0) !important;
+}
+
+a.btn.btn-link.btn-floating.btn-lg.m-1{
+    color: #fff;
+}
+
+button.btn-outline-success {
+    color: rgb(165, 0, 0);
+    border-color: rgb(165, 0, 0);
+}
+.btn-outline-success:hover {
+    color: #fff !important;
+    background-color: rgb(165, 0, 0) !important;
+    border-color: rgb(165, 0, 0) !important;
+}
+
+#menu{
+    color: #fff;
+    height: 90px;
+    background-color: rgb(165, 0, 0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+.btn-outline-light{
+    border-color: rgb(165, 0, 0) !important;
+}
+.btn-outline-light:hover{
+    color: #fff !important;
+    background-color: rgb(100, 0, 0) !important;
+    border-color: #fff;
+    border-radius: 30px;
+    transition-duration: 500ms;
+}
+.btn-check:focus + .btn, .btn:focus {
+    box-shadow: none !important;
+}
+.btn-check:focus + .btn-outline-light, .btn-outline-light:focus{
+    box-shadow: none !important;
+}
+
+#productos{
+    color: rgb(75, 75, 75);
+    background-color: rgb(245, 245, 245);
+    box-shadow: rgb(155, 155, 155);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+hr.rounded {
+    border-top: 8px solid rgb(75, 75, 75);
+    border-radius: 5px;
+  }
+
+footer{
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: rgb(165, 0, 0) 15px solid;
+    font-family: 'Kaushan Script';
+    text-decoration: none;
+}
+
+div.text-center.text-light.p-3{
+    border-top: rgb(165, 0, 0) 5px solid;
+}
+
+.carousel-item{
+    max-height: 400px;
+}
+
+.carousel{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.texto_central{
+    font-family: 'Kaushan Script';
+    margin-top: 15px;
+    font-size: 45px;
+}
+
+.card-img-top{
+    max-height: 235px;
+    max-width: 235px;
+}
+
+.container_footer .container{
+    margin-left: 0;
+}
+
+.container_footer{
+    border-top: 1rem solid red;
+    background-color: black;
+    font-family: 'Kaushan Script';
+    font-size: 35px; 
+}
+
+.text_muted{
+    margin-left: 100px;
+    color: white;
+    font-size: 20px;
+}
+
+footer .col h5{
+    color: red;
+    font-size: 35px;
+}
+
+footer .col a{
+    color: white !important;
 }
 @charset "UTF-8";
 /*!
