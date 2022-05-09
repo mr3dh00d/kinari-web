@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Models;
 
 class ProductsController extends Controller
 {
@@ -13,7 +15,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('Products.index');
+        return redirect('/secciones');
     }
 
     /**
@@ -21,9 +23,15 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('Products.create');
+        $request->validate([
+            'seccion' => 'required'
+        ]);
+
+        return view('admin.products.create', [
+            'seccion' => Models\Seccion::findOrFail($request->get('seccion'))
+        ]);
     }
 
     /**
@@ -35,7 +43,52 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //Guardar los datos del producto
-        dd($request);
+        $request->validate([
+            'seccion' => 'required|integer',
+            'nombre' => 'required',
+            'imagen' => 'required|image',
+            'imagen_desc' => 'required',
+            'precio' => 'required|integer',
+            'palab_clave' => 'required',
+            'descripcion' => 'required'
+        ], [
+            'nombre.required' => 'El nombre es requerido',
+            'imagen.required' => 'La imagen es requerida',
+            'imagen.image' => 'El archivo debe de ser una imagen',
+            'imagen_desc.required' => 'La imagen debe llevar descripcion',
+            'precio.required' => 'El precio es requerido',
+            'precio.number' => 'El precio debe ser un número',
+            'palab_clave.required' => 'Las palabras claves son requeridas',
+            'descripcion.required' => 'La descripcion es requerida'
+        ]);
+
+        $producto = new Models\Producto();
+        $destacado = false;
+        if($request->get('destacado') !== null){
+            $destacado = true;
+        }
+        $producto->destacado = $destacado;
+        $producto->orden = count(Models\Seccion::findOrFail($request->get('seccion'))->productos);
+        $producto->nombre = $request->get('nombre');
+        $producto->palabras_claves = json_encode(explode(', ', $request->get('palab_clave')));
+        $producto->descripcion = $request->get('descripcion');
+        $producto->precio = $request->get('precio');
+        $producto->seccion_id = $request->get('seccion');
+        $producto->save();
+
+        $file = $request->file('imagen');
+        $filename = $file->getClientOriginalName();
+        Storage::disk('productos')->put($filename, \File::get($file));
+
+        $imagen = new Models\Imagen();
+        $imagen->nombre = $filename;
+        $imagen->descripcion = $request->get('imagen_desc');
+        $imagen->ruta = Storage::disk('productos')->url($filename);
+        $imagen->producto_id = $producto->id;
+        $imagen->save();
+
+        return redirect('/secciones/'.$request->get('seccion'));
+        
     }
 
     /**
@@ -46,7 +99,8 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        return "Holas estes es el productos ".$id;
+        $producto = Models\Producto::findOrFail($id);
+        return redirect('/secciones/'.$producto->seccion->id);
     }
 
     /**
@@ -57,7 +111,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        return "Editar productos ".$id;
+        return view('admin.products.edit', [
+            'producto' => Models\Producto::findOrFail($id)
+        ]);
     }
 
     /**
@@ -70,6 +126,65 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         //Guardar los cambios del producto
+        $request->validate([
+            'nombre' => 'required',
+            'imagen_desc' => 'required',
+            'precio' => 'required|integer',
+            'palab_clave' => 'required',
+            'descripcion' => 'required'
+        ], [
+            'nombre.required' => 'El nombre es requerido',
+            'imagen.required' => 'La imagen es requerida',
+            'imagen_desc.required' => 'La imagen debe llevar descripcion',
+            'precio.required' => 'El precio es requerido',
+            'precio.number' => 'El precio debe ser un número',
+            'palab_clave.required' => 'Las palabras claves son requeridas',
+            'descripcion.required' => 'La descripcion es requerida'
+        ]);
+
+        $producto = Models\Producto::findOrFail($id);
+        $imagen = $producto->imagen;
+
+        if($request->file('imagen') !== null){
+            $request->validate([
+                'imagen' => 'required|image',
+            ],[
+                'imagen.image' => 'El archivo debe de ser una imagen',
+            ]);
+
+            //eliminar imagen antigua
+            if(count(Models\Imagen::where('nombre', $imagen->nombre)->get()) < 2){
+                Storage::disk('productos')->delete($imagen->nombre);
+            }
+
+            //Subir nueva imagen
+            $file = $request->file('imagen');
+            $filename = $file->getClientOriginalName();
+            Storage::disk('productos')->put($filename, \File::get($file));
+
+            //Editar imagen
+            $imagen->nombre = $filename;
+            $imagen->ruta = Storage::disk('productos')->url($filename);
+        }
+
+        $destacado = false;
+        if($request->get('destacado') !== null){
+            $destacado = true;
+        }
+        $producto->destacado = $destacado;
+        $producto->nombre = $request->get('nombre');
+        $producto->palabras_claves = json_encode(explode(',', $request->get('palab_clave')));
+        $producto->descripcion = $request->get('descripcion');
+        $producto->precio = $request->get('precio');
+
+        $imagen->descripcion = $request->get('imagen_desc');
+
+
+        $producto->save();
+        $imagen->save();
+
+        return redirect('/secciones/'.$producto->seccion->id);
+
     }
 
     /**
@@ -81,5 +196,32 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         //Eliminar producto
+        $producto = Models\Producto::findOrFail($id);
+        $id = $producto->seccion->id;
+        $imagen = $producto->imagen;
+        if(count(Models\Imagen::where('nombre', $imagen->nombre)->get()) < 2){
+            Storage::disk('productos')->delete($imagen->nombre);
+        }
+        $imagen->delete();
+        $producto->delete();
+        return redirect('/secciones/'.$id);
+    }
+
+    public function cambiarOrden(Request $request){
+        $request->validate([
+            'orden' => 'required'
+        ]);
+        $i = 0;
+        foreach ($request->get('orden') as $orden) {
+            $producto = Models\Producto::find($orden);
+            if(isset($producto)){
+                $producto->orden = $i;
+                $producto->save();
+                $i++;
+            }
+        }
+        return [
+            'respuesta' => 'OK'
+        ];
     }
 }

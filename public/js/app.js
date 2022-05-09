@@ -5367,10 +5367,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 
-__webpack_require__(/*! ./prueba */ "./resources/js/prueba.js");
-
-__webpack_require__(/*! ./list */ "./resources/js/list.js");
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -5401,74 +5397,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
-
-/***/ }),
-
-/***/ "./resources/js/list.js":
-/*!******************************!*\
-  !*** ./resources/js/list.js ***!
-  \******************************/
-/***/ (() => {
-
-if (document.getElementById("lista_prod")) {
-  var list = document.querySelectorAll('.list-group-item');
-  list.forEach(function (element) {
-    element.addEventListener("mouseenter", function (event) {
-      event.target.classList.add('active');
-    });
-    element.addEventListener("mouseout", function (event) {
-      event.target.classList.remove('active');
-    });
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/prueba.js":
-/*!********************************!*\
-  !*** ./resources/js/prueba.js ***!
-  \********************************/
-/***/ (() => {
-
-document.addEventListener("DOMContentLoaded", function (event) {
-  var showNavbar = function showNavbar(toggleId, navId, bodyId, headerId) {
-    var toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navId),
-        bodypd = document.getElementById(bodyId),
-        headerpd = document.getElementById(headerId); // Validate that all variables exist
-
-    if (toggle && nav && bodypd && headerpd) {
-      toggle.addEventListener('click', function () {
-        // show navbar
-        nav.classList.toggle('show'); // change icon
-
-        toggle.classList.toggle('bx-x'); // add padding to body
-
-        bodypd.classList.toggle('body-pd'); // add padding to header
-
-        headerpd.classList.toggle('body-pd');
-      });
-    }
-  };
-
-  showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header');
-  /*===== LINK ACTIVE =====*/
-
-  var linkColor = document.querySelectorAll('.nav_link');
-
-  function colorLink() {
-    if (linkColor) {
-      linkColor.forEach(function (l) {
-        return l.classList.remove('active');
-      });
-      this.classList.add('active');
-    }
-  }
-
-  linkColor.forEach(function (l) {
-    return l.addEventListener('click', colorLink);
-  }); // Your code to run since DOM is loaded and ready
-});
 
 /***/ }),
 
