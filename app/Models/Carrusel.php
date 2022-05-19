@@ -15,9 +15,8 @@ class Carrusel extends Imagen
         static::addGlobalScope('carrusel', function (Builder $builder) {
             $builder->where('is_carrusel', true);
         });
-        static::created(function ($carrusel) {
+        static::creating(function ($carrusel) {
             $carrusel->is_carrusel = true;
-            $carrusel->save();
         });
     }
 }
