@@ -8,8 +8,7 @@ use App\Models;
 class WebsiteController extends Controller
 {
     public function home(){
-        $carruseles = Models\Carrusel::all();
-        if(count($carruseles) > 0){
+        if(!Models\Carrusel::limit(1)->get()->isEmpty()){
             return view('website.home', [
                 'carruseles' => Models\Carrusel::all(),
                 'destacados' => Models\Producto::where('destacado', true)->get()
@@ -20,7 +19,7 @@ class WebsiteController extends Controller
     }
 
     public function carta(){
-        if(count(Models\Producto::all()) > 0){
+        if(!Models\Producto::limit(1)->get()->isEmpty()){
             return view('website.carta', [
                 'secciones' => Models\Seccion::all()
             ]);

@@ -41,10 +41,14 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
 Route::get('/', [Controllers\WebsiteController::class, 'home']);
 Route::get('/carta', [Controllers\WebsiteController::class, 'carta']);
 
-Route::get('/run-migrations', function () {
-    return Artisan::call('migrate', [
-        '--force' => true,
-        '--seed' => true
-    ]);
-});
+// Route::get('/run-migrations', function () {
+//     return Artisan::call('migrate', [
+//         '--force' => true,
+//         '--seed' => true
+//     ]);
+// });
+
+// Route::get('/rollback', function () {
+//     return Artisan::call('migrate:rollback');
+// });
 
