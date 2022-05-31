@@ -10,7 +10,7 @@
     @yield('metatags')
 
     <!--App CSS-->
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
     <!--App´ICON-->
     <link rel="icon" href="/favicon.ico" />
     <!--Optional LINKS-->
@@ -29,7 +29,7 @@
     @yield('footer')
 
     <!--App JS-->
-    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/admin.js')}}"></script>
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/607cfbde25.js" crossorigin="anonymous"></script>
     <!--Optional JS-->
