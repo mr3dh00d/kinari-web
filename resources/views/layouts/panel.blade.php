@@ -33,10 +33,13 @@
                         <i class="fa-solid fa-gear"></i>
                         <span class="nav_name">Configuración</span>
                     </a> --}}
-                    <a href="/logout" class="nav_link">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        <span class="nav_name">Cerrar sesión</span>
-                    </a>
+                    <form action="/logout" method="post" name="logout">
+                        @csrf
+                        <button type="submit" class="nav_link">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span class="nav_name">Cerrar sesión</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </nav>

@@ -132,6 +132,10 @@ body#body-pd.body-pd, #body-pd .body-pd {
         transition: .3s;
         text-decoration: none;
     }
+    form[name="logout"] button.nav_link {
+        background-color: transparent;
+        border: 0;
+    }
     
     .nav_link:hover {
         color: var(--color-base);

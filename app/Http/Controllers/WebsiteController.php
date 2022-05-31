@@ -7,23 +7,44 @@ use App\Models;
 
 class WebsiteController extends Controller
 {
-    public function home(){
-        if(!Models\Carrusel::limit(1)->get()->isEmpty()){
-            return view('website.home', [
-                'carruseles' => Models\Carrusel::all(),
-                'destacados' => Models\Producto::where('destacado', true)->get()
-            ]);
-        }
+    public function building(){
         return view('building');
+    }
 
+    public function home(){
+        $carruseles = Models\Carrusel::all();
+        $productos_destacados = Models\Producto::where('destacado', true)->get();
+        if($carruseles->isEmpty()){
+            return $this->building();
+        }
+
+        return view('website.home', [
+            'carruseles' => $carruseles,
+            'destacados' => $productos_destacados
+        ]);
     }
 
     public function carta(){
-        if(!Models\Producto::limit(1)->get()->isEmpty()){
-            return view('website.carta', [
-                'secciones' => Models\Seccion::all()
-            ]);
+        $secciones = Models\Seccion::has('productos')
+                        ->with(['productos' => function ($query){
+                            $query->orderBy('orden')->get();
+                        }])
+                        ->orderBy('orden')
+                        ->get();
+        if($secciones->isEmpty()){
+           return $this->building(); 
         }
-        return view('building');
+        return view('website.carta', [
+            'secciones' => $secciones
+        ]);
+    }
+
+    public function obtenerSecciones(){
+        return Models\Seccion::has('productos')
+            ->with(['productos' => function ($query){
+                $query->with('imagen')->orderBy('orden')->get();
+            }])
+            ->orderBy('orden')
+            ->get();
     }
 }
