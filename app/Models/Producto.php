@@ -11,6 +11,15 @@ class Producto extends Model
 
     protected $table = 'productos';
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'palabras_claves' => 'array',
+    ];
+
     public function imagen(){
         return $this->hasOne(Imagen::class);
     }

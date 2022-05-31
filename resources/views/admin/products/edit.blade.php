@@ -68,7 +68,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="palab_clave" class="col-form-label">Palabras Clave:</label>
-                    <input type="text" class="form-control @error('palab_clave') is-invalid @enderror" id="palab_clave" name="palab_clave" value="{{implode(', ', json_decode($producto->palabras_claves))}}">
+                    <input type="text" class="form-control @error('palab_clave') is-invalid @enderror" id="palab_clave" name="palab_clave" value="{{implode(', ', $producto->palabras_claves)}}">
                     @error('palab_clave')
                     <div class="invalid-feedback d-block">
                         {{$message}}

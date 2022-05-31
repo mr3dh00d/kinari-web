@@ -14,20 +14,17 @@
     <div class="container my-sm-3">
 
       <div id="menu" class="row align-items-center text-center flex-nowrap py-1 ">
-        @foreach ($secciones->sortBy('orden') as $seccion)
-          @if (count($seccion->productos) > 0)
+        @foreach ($secciones as $seccion)
             <a class="col-md category-name py-2 mx-2" href="#{{$seccion->id}}">
               {{$seccion->nombre}}
-            </a>    
-          @endif
+            </a>
         @endforeach
       </div>
 
 
       <div id="productos" class="row px-2 pb-3">
         <div class="col">
-          @foreach ($secciones->sortBy('orden') as $seccion)
-            @if (count($seccion->productos) > 0)
+          @foreach ($secciones as $seccion)
               <div id="{{$seccion->id}}" class="row">
                 <div class="col-12 section-tittle ff-kaushan py-2">
                   <div class="row">
@@ -37,7 +34,7 @@
                 </div>
                 <div class="col-12 section-content">
                   <div class="row row-cols-2 row-cols-lg-3 gy-2">
-                    @foreach ($seccion->productos->sortBy('orden') as $producto)
+                    @foreach ($seccion->productos as $producto)
                       <div class="col">
                         <div class="card h-100">
                           <img class="estilo-img" src="{{$producto->imagen->ruta}}" class="card-img-top" alt="{{$producto->imagen->descripcion}}">
@@ -51,8 +48,7 @@
                     @endforeach
                   </div>
                 </div>
-              </div>    
-            @endif
+              </div>
           @endforeach
         </div>
       </div>

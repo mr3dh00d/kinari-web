@@ -20,7 +20,6 @@
 
 @section('content')
   <div class="container my-3 home-content">
-    @if (count($carruseles) > 0)
       <div class="row">
         <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner d-flex align-items-center">
@@ -40,7 +39,6 @@
           </button>
         </div>
       </div>
-    @endif
 
     <div class="row py-3 home-title">
       <div class="col text-center ff-kaushan">
@@ -54,7 +52,7 @@
 
     <div class="row carta row-cols-1 row-cols-md-2 row-cols-md-3 g-3">
       @foreach ($destacados as $producto)
-        <div class="col-12 col-md-6 col-xl-4 py-3">
+        <div class="col">
           <a class="card" href="/carta#{{$producto->seccion->id}}">
             <div class="card-img-top d-flex align-items-center">
               <img src="{{$producto->imagen->ruta}}" class="img-fluid" alt="{{$producto->imagen->descripcion}}">

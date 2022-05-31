@@ -18,7 +18,7 @@ use App\Http\Controllers;
 Route::domain('admin.' . env('APP_URL'))->group(function () {
     Route::get('/login', [Controllers\AdminLoginController::class, 'index']);
     Route::post('/authenticate', [Controllers\AdminLoginController::class, 'authenticate']);
-    Route::get('/logout', [Controllers\AdminLoginController::class, 'logOut'])->name('logout');
+    Route::post('/logout', [Controllers\AdminLoginController::class, 'logOut'])->name('logout');
     Route::middleware(['is_admin'])->group(function () {
         Route::get('/', [Controllers\AdminPanelController::class, 'index']);
         Route::resource('/carrusel', Controllers\CarruselController::class);
@@ -40,11 +40,16 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
 
 Route::get('/', [Controllers\WebsiteController::class, 'home']);
 Route::get('/carta', [Controllers\WebsiteController::class, 'carta']);
+Route::get('/obtenerSecciones', [Controllers\WebsiteController::class, 'obtenerSecciones']);
 
-Route::get('/run-migrations', function () {
-    return Artisan::call('migrate', [
-        '--force' => true,
-        '--seed' => true
-    ]);
-});
+// Route::get('/run-migrations', function () {
+//     return Artisan::call('migrate', [
+//         '--force' => true,
+//         '--seed' => true
+//     ]);
+// });
+
+// Route::get('/rollback', function () {
+//     return Artisan::call('migrate:rollback');
+// });
 

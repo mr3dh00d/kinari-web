@@ -16,10 +16,11 @@ return new class extends Migration
     {
         Schema::create('imagenes', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_carrusel')->default(false);
             $table->string('nombre');
             $table->string('descripcion');
             $table->text('ruta');
-            $table->foreignIdFor(Models\Producto::class);
+            $table->foreignIdFor(Models\Producto::class)->nullable();
             $table->timestamps();
         });
     }

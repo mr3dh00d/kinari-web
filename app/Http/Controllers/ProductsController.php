@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use App\Models;
 
 class ProductsController extends Controller
@@ -70,7 +72,9 @@ class ProductsController extends Controller
         $producto->destacado = $destacado;
         $producto->orden = count(Models\Seccion::findOrFail($request->get('seccion'))->productos);
         $producto->nombre = $request->get('nombre');
-        $producto->palabras_claves = json_encode(explode(', ', $request->get('palab_clave')));
+        $palabras_claves = explode(',', $request->get('palab_clave'));
+        $palabras_claves =  array_map('trim', $palabras_claves);
+        $producto->palabras_claves = $palabras_claves;
         $producto->descripcion = $request->get('descripcion');
         $producto->precio = $request->get('precio');
         $producto->seccion_id = $request->get('seccion');
@@ -173,7 +177,9 @@ class ProductsController extends Controller
         }
         $producto->destacado = $destacado;
         $producto->nombre = $request->get('nombre');
-        $producto->palabras_claves = json_encode(explode(',', $request->get('palab_clave')));
+        $palabras_claves = explode(',', $request->get('palab_clave'));
+        $palabras_claves =  array_map('trim', $palabras_claves);
+        $producto->palabras_claves = $palabras_claves;
         $producto->descripcion = $request->get('descripcion');
         $producto->precio = $request->get('precio');
 
