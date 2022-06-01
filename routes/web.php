@@ -40,7 +40,13 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
 
 Route::get('/', [Controllers\WebsiteController::class, 'home']);
 Route::get('/carta', [Controllers\WebsiteController::class, 'carta']);
-Route::get('/obtenerSecciones', [Controllers\WebsiteController::class, 'obtenerSecciones']);
+
+Route::get('/resumen', [Controllers\WebsiteController::class, 'resumen']);
+Route::get('/seleccionar-direccion', [Controllers\WebsiteController::class, 'seleccionarDireccion']);
+Route::get('/checkout', [Controllers\WebsiteController::class, 'checkout']);
+Route::get('/resultado', [Controllers\WebsiteController::class, 'resultado']);
+
+Route::post('/obtenerSecciones', [Controllers\WebsiteController::class, 'obtenerSecciones']);
 
 // Route::get('/run-migrations', function () {
 //     return Artisan::call('migrate', [

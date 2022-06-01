@@ -41,10 +41,23 @@ class WebsiteController extends Controller
 
     public function obtenerSecciones(){
         return Models\Seccion::has('productos')
-            ->with(['productos' => function ($query){
-                $query->with('imagen')->orderBy('orden')->get();
-            }])
+            // ->with(['productos' => function ($query){
+            //     $query->with('imagen')->orderBy('orden')->get();
+            // }])
             ->orderBy('orden')
             ->get();
+    }
+
+    public function resumen(){
+        return view('website.pago.resumen');
+    }
+    public function seleccionarDireccion(){
+        return view('website.pago.direccion');
+    }
+    public function checkout(){
+        return view('website.pago.checkout');
+    }
+    public function resultado(){
+        return view('website.pago.resultado');
     }
 }

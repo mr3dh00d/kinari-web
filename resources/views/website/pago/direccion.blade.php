@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-
+<h1>direccion</h1>
 @endsection
 
 @section('footer')
