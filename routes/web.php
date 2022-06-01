@@ -32,9 +32,7 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
         Route::get('/pedidos', [Controllers\PedidoController::class, 'pedidosTodos']);
         Route::get('/nuevos-pedidos', [Controllers\PedidoController::class, 'pedidosNuevos']);
         
-        // Route::get('/settings', function () {
-        //     return view('building-prueba');
-        // });
+        Route::get('/configuracion', [Controllers\ConfiguracionController::class, 'index']);
         
         // Route::get('/carrusel', function () {
         //     return view('carrusel');

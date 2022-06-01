@@ -37,10 +37,10 @@
                         <i class="fa-brands fa-buy-n-large"></i>
                         <span class="nav_name">Carrusel</span>
                     </a> --}}
-                    {{-- <a href="/settings" class="nav_link"> 
+                    <a href="/configuracion" class="nav_link"> 
                         <i class="fa-solid fa-gear"></i>
                         <span class="nav_name">Configuración</span>
-                    </a> --}}
+                    </a>
                     <form action="/logout" method="post" name="logout">
                         @csrf
                         <button type="submit" class="nav_link">
