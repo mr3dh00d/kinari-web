@@ -74,6 +74,7 @@ class ProductsController extends Controller
         $producto->nombre = $request->get('nombre');
         $palabras_claves = explode(',', $request->get('palab_clave'));
         $palabras_claves =  array_map('trim', $palabras_claves);
+        $palabras_claves =  array_map('strtolower', $palabras_claves);
         $producto->palabras_claves = $palabras_claves;
         $producto->descripcion = $request->get('descripcion');
         $producto->precio = $request->get('precio');
@@ -179,6 +180,7 @@ class ProductsController extends Controller
         $producto->nombre = $request->get('nombre');
         $palabras_claves = explode(',', $request->get('palab_clave'));
         $palabras_claves =  array_map('trim', $palabras_claves);
+        $palabras_claves =  array_map('strtolower', $palabras_claves);
         $producto->palabras_claves = $palabras_claves;
         $producto->descripcion = $request->get('descripcion');
         $producto->precio = $request->get('precio');
