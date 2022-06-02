@@ -39,13 +39,16 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function obtenerSecciones(){
-        return Models\Seccion::has('productos')
-            // ->with(['productos' => function ($query){
-            //     $query->with('imagen')->orderBy('orden')->get();
-            // }])
-            ->orderBy('orden')
-            ->get();
+    // public function obtenerSecciones(){
+    //     return Models\Seccion::has('productos')
+    //         ->with(['productos' => function ($query){
+    //             $query->with('imagen')->orderBy('orden')->get();
+    //         }])
+    //         ->orderBy('orden')
+    //         ->get();
+    // }
+    public function obtenerSecciones(Request $request){
+        return Models\Producto::whereJsonContains('palabras_claves', $request->get('query'))->with('seccion')->get();  
     }
 
     public function resumen(){
@@ -61,3 +64,4 @@ class WebsiteController extends Controller
         return view('website.pago.resultado');
     }
 }
+
