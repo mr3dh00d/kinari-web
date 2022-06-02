@@ -2,6 +2,10 @@
 
 @section('title', 'Kinari - Sushi Bar')
 
+@section('metatags')
+<meta name="csrf-token" content="{{csrf_token()}}">
+@endsection
+
 @section('idBody', 'carta')
 
 @section('header')
@@ -11,8 +15,18 @@
 @endsection
 
 @section('content')
+<!-- puede que mueva la cosa a otro container
+-->
     <div class="container my-sm-3">
 
+      <div class="mb-3">
+       <input id="query_search" type="text" placeholder="Search.."name="search"> 
+       <button id="search_button"type="submit">Buscar</button>
+      </div>
+
+      <div id="espacio">
+      </div> 
+      
       <div id="menu" class="row align-items-center text-center flex-nowrap py-1 ">
         @foreach ($secciones as $seccion)
             <a class="col-md category-name py-2 mx-2" href="#{{$seccion->id}}">
