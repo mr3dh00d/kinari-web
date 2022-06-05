@@ -48,6 +48,12 @@ Route::get('/resultado', [Controllers\WebsiteController::class, 'resultado']);
 
 Route::post('/obtenerSecciones', [Controllers\WebsiteController::class, 'obtenerSecciones']);
 
+Route::get('/acceso', [Controllers\AutenticacionController::class, 'login']);
+Route::post('/autenticacion', [Controllers\AutenticacionController::class, 'autenticacion']);
+Route::get('/registro', [Controllers\AutenticacionController::class, 'register']);
+Route::post('/guardarUsuario', [Controllers\AutenticacionController::class, 'guardarUsuario']);
+Route::post('/logout', [Controllers\AutenticacionController::class, 'logout'])->name('logOut');
+
 // Route::get('/run-migrations', function () {
 //     return Artisan::call('migrate', [
 //         '--force' => true,

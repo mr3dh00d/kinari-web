@@ -20,17 +20,36 @@
                     Local
                 </a>
             </li> --}}
-            {{-- <li class="nav-item text-center dropdown">
+            @if(auth()->check())
+              <li class="nav-item text-center dropdown">
                 <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="/img/ingresar_blanco.png" class="img-fluid" alt="" width="40" class="d-inline-block align-text-top">
-                    Cuenta
+                  <i class="fa-solid fa-user"></i>
+                  @auth{{Auth::user()->name}}@endauth
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Iniciar Sesion</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Registrarse</a></li>
+                  <form method="POST" action="/logout" name="logOut"> 
+                    @csrf
+                    <li>
+                      <button type="submit" class="btn btn-link" id="btn_logout">
+                        <span class="nav_name">Cerrar Sesion</span>
+                      </button>
+                    </li>
+                  </form>
                 </ul>
-            </li> --}}
+              </li>
+            @else
+              <li class="nav-item text-center dropdown">
+                  <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-user"></i>
+                      Ingresar
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="/acceso">Iniciar Sesion</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/registro">Registrarse</a></li>
+                  </ul>
+              </li>
+            @endif
         </ul>
       </div>
     </div>

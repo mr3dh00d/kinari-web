@@ -285,6 +285,16 @@ a.footer-btn-link:hover{
     border-radius: 1.5rem;
     transition-duration: .25s;
 }
+
+.link-danger{
+    text-decoration: none !important;
+}
+
+#btn_logout{
+    color: #000;
+    text-decoration: none;
+}
+
 @keyframes neon {
     from {
       text-shadow:
