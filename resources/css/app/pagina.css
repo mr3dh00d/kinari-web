@@ -60,6 +60,11 @@ button.btn-outline-success {
 .category-name:hover{
     background-color: rgb(100, 0, 0);
 }
+
+.search-btn{
+    background-color: var(--red) !important;
+    color: #fff;
+}
 /* .btn-outline-light{
     border-color: var(--red) !important;
 }

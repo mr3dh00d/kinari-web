@@ -8,12 +8,20 @@ import MenuLink from "./MenuLink";
 //   const MenuBar = ReactDOM.createRoot(MenuBarHTML);
 
 // }
-
-document.getElementById("search_button").addEventListener("click", Search);
+// document.getElementById("query_search").addEventListener("keypress", Esearch);
+// document.getElementById("search_button").addEventListener("click", Search);
+document.getElementById("busq_form").addEventListener("submit", Search);
 var root = ReactDOM.createRoot(document.getElementById("espacio"));
 let csrf_token = document.querySelector('meta[name="csrf-token"]').content;
 
-function Search() {
+function Esearch(e) {
+  if (e.key === 'Enter'){
+  // code for enter
+}
+};
+
+function Search(event) {
+  event.preventDefault();
   var query = document.getElementById("query_search").value;
   console.log(query);
   fetch('/obtenerSecciones', {
@@ -32,10 +40,10 @@ function Search() {
   .catch((err)=>{console.log(err)});
 }
 
-function renderMenuLinks(secciones, root){
+function renderMenuLinks(productos, root){
   let links = [];
-  secciones.forEach( (seccion, key) => {
-      links.push(<MenuLink key={key} seccion={seccion}/>);
+  productos.forEach( (producto, key) => {
+      links.push(<MenuLink key={key} producto={producto}/>);
   });
   root.render(links);
 }
