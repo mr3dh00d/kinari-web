@@ -18,6 +18,7 @@ class Administrador extends User
         });
         static::creating(function ($administrador) {
             $administrador->is_admin = true;
+            $administrador->phone_number = "+11111111111";
         });
     }
 }

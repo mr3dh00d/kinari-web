@@ -51,7 +51,7 @@
                     @foreach ($seccion->productos as $producto)
                       <div class="col">
                         <div class="card h-100">
-                          <img class="estilo-img" src="{{$producto->imagen->ruta}}" class="card-img-top" alt="{{$producto->imagen->descripcion}}">
+                          <img class="estilo-img card-img-top" src="{{$producto->imagen->ruta}}" alt="{{$producto->imagen->descripcion}}">
                           <div class="card-body">
                             <h5 class="card-title">{{$producto->nombre}}</h5>
                             <p class="card-text">{{$producto->descripcion}}</p>

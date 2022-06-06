@@ -4,7 +4,7 @@
 <!-- PopUp ("modal") 
 
 -->
-<div class="container">
+<div class="container mb-3">
     <div class="row">
         <div class="col">
             <h1>Editar {{$producto->nombre}}</h1>
@@ -85,7 +85,7 @@
                         </div>                        
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn btn-primary mb-3">Guardar</button>
             </form>
 
         </div>
