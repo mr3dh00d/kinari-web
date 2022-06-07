@@ -41,17 +41,18 @@ class AutenticacionController extends Controller
     public function guardarUsuario(Request $request){
         $request -> validate([
             'name'=> 'required',
-            'telefono'=> 'required',
+            'telefono'=> ['required', 'regex:/9[0-9]{8}/i'],
             'email'=> 'required',
-            'password'=> 'required|confirmed',
-            'password_confirmation'=> 'required'
+            'password'=> 'required|confirmed|min:6'
         ],
         [
             'name.required' => 'El nombre es requerido.',
             'telefono.required' => 'El teléfono es requerido.',
+            'telefono.regex' => 'El teléfono no tiene el formato correcto.',
             'email.required' => 'El correo es requerido.',
             'password.required' => 'La contraseña es requerida.',
-            'password_confirmation.required' => 'La confirmacion de contraseña es requerida.'
+            'password.confirmed' => 'Las contraseñas no coinciden.',
+            'password.min' => 'La conteaseña debe tener al menos :min caracteres.'
         ]);
 
         $cliente = new Models\Cliente;

@@ -20,11 +20,11 @@
                     Local
                 </a>
             </li> --}}
-            @if(auth()->check())
+            @auth
               <li class="nav-item text-center dropdown">
                 <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fa-solid fa-user"></i>
-                  @auth{{Auth::user()->name}}@endauth
+                  {{Auth::user()->name}}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <form method="POST" action="/logout" name="logOut"> 
@@ -49,7 +49,7 @@
                       <li><a class="dropdown-item" href="/registro">Registrarse</a></li>
                   </ul>
               </li>
-            @endif
+            @endauth
         </ul>
       </div>
     </div>

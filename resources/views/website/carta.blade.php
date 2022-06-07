@@ -48,8 +48,10 @@
             </div>
             <div class="mb-3 col-12">
               <form id="busq_form" class="row">
-                <input id="query_search" class="col" type="text" placeholder="Search.."name="search"> 
-                <button id="search_button" class="col-auto btn search-btn" type="submit">Buscar</button>
+                <div class="input-group mb-3">
+                  <input id="query_search" class="form-control" type="text" placeholder="¿Qué estas buscando?" name="search"> 
+                  <button id="search_button" class="input-group-text px-5 search-btn" type="submit">Buscar</button>
+                </div>
               </form>
             </div>
             <div class="col-12 section-content">
