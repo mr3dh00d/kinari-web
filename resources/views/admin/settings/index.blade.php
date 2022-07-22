@@ -11,7 +11,7 @@
                 <h1>Configuración</h1>
             </div>
         </div>
-        <div id="rootSuperUserManagement">
+        <div id="setting-app">
 
         </div>
         {{-- <div class="row" id="administradoresManagement">

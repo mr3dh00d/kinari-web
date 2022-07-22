@@ -23,9 +23,6 @@ class ConfiguracionController extends Controller
         return back()->with('error', 'Tipo de usuario no especificado');
     }
     public function guardarSuperUsuario(Request $request){
-        // return ['message' => 'estas en el endpoint correcto para guardar un administrador'];
-        // return $request->all();
-
         $request->validate([
             'user-type' => 'required',
             'nombre' => 'required',
@@ -54,8 +51,6 @@ class ConfiguracionController extends Controller
         }elseif($userType == 'cajero'){
             $superUser =  !is_null($id) ? Models\Cajero::findOrFail($id) : new Models\Cajero();
         }
-        // else{
-        // }
 
         $superUser->name = $request->get('nombre');
         $superUser->email = $request->get('correo');
@@ -63,7 +58,6 @@ class ConfiguracionController extends Controller
 
         $superUser->save();
         
-        // return ['message' => 'Se ha guardado cajero con exito'];
         return ['message' => 'Se ha guardado el administrador con éxito'];
 
     }
@@ -90,4 +84,33 @@ class ConfiguracionController extends Controller
         return ['message' => 'Se ha eliminado el usuario con éxito'];
 
     }
+    public function obtenerRangos(Request $request){
+        return Models\RangoDistancia::orderBy('distancia')->get();
+    }
+    public function guardarRangos(Request $request){
+        $validate = $request->validate([
+            'distancia' => 'required|int',
+            'costo' => 'required|int',
+        ], [
+            'distancia.required' => 'Necesita una distancia',
+            'distancia.unique' => 'Esa distancia ya está configurada',
+            'costo.required' => 'Necesita un costo'
+        ]);
+        $update = Models\RangoDistancia::where('distancia', $validate['distancia'])->first();
+        if(!is_null($update)){
+            $update->update($validate);
+            return ['message' => 'Se ha actualizado un rango con éxito'];
+        }
+        Models\RangoDistancia::create($validate);
+        return ['message' => 'Se ha creado un rango con éxito'];
+    }
+    public function eliminarRangos(Request $request){
+        $validate = $request->validate([
+            'id' => 'required'
+        ]);
+        Models\RangoDistancia::findOrFail($request->get('id'))->delete();
+        return [
+            'message' => 'Se ha eliminado el rango de distancia con éxito'
+        ];
+    } 
 }

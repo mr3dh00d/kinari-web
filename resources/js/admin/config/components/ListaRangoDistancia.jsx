@@ -1,47 +1,44 @@
 import React from 'react';
-import FilaSuperUsuario from './FilaSuperUsuario';
+import FilaRangoDistancia from './FilaRangoDistancia';
 
-function ListaSuperUsuarios (props) {
+function ListaRangoDistancia(props){
 
-    let superUsers = props.superUsers;
+    if(props.rangos){
+        let rangos = props.rangos;
 
-    if(superUsers){
-        let result = [
+        let result = [(
             <li key={0} className="row d-flex list-group-item list-group-item-secondary">
                 <div className="col-12 col-sm-4 fw-bold">
-                    Nombre
-                    </div>
+                    Distancia (metros)
+                </div>
                 <div className="col-12 col-sm fw-bold">
-                    Correo
+                    Costo
                 </div>
             </li>
-        ];
-
-        if(!(superUsers.length > 0)){
+        )];
+        if(!(rangos.length > 0)){
             result.push(
                 <li key={1} className="row d-flex list-group-item">
                     <div className="col-12 text-center">
-                        No hay usuarios del tipo {props.userType} :(
+                        {"No hay rangos de distancia :("}
                     </div>
                 </li>
-            );
+            );   
         }
-    
-        superUsers.forEach((superUser, key) => {
+
+        rangos.forEach((rango, key) => {
             result.push(
-                <FilaSuperUsuario
+                <FilaRangoDistancia
                     key={key+1}
                     csrf_token={props.csrf_token}
-                    userType={props.userType}
-                    superUser={superUser}
-                    qtyOfSuperUsers={superUsers.length}
-                    setIcon={props.setIcon}
-                    setErrors={props.setErrors}
+                    rango={rango}
                     setValuesForm={props.setValuesForm}
-                    setSuccess={props.setSuccess}/>
+                    setIcon={props.setIcon}
+                    setSuccess={props.setSuccess}
+                />
             );
         });
-    
+
         return(
             <div className="col">
                 {result}
@@ -56,7 +53,6 @@ function ListaSuperUsuarios (props) {
             </div>
         </div>
     );
-
 }
 
-export default ListaSuperUsuarios;
+export default ListaRangoDistancia;

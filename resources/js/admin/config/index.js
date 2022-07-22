@@ -1,19 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import ManejoSuperUsuario from './components/ManejoSuperUsuario';
+import ManejoRangosDistancias from './components/ManejoRangosDistancias';
 
 //Se comprueba si existe el aparatado para el manejo de administradores
-let rootSUM = document.getElementById('rootSuperUserManagement');
-if(rootSUM) {
+let root = document.getElementById('setting-app');
+if(root) {
     //Se crea el root con el div de administradoresManagement
-    let rootSUMR = ReactDOM.createRoot(rootSUM);
+    root = ReactDOM.createRoot(root);
     //Se guarda el token de csrf
     let csrf_token = document.querySelector('meta[name="csrf-token"]').content;
     //Se renderiza el ManejoSuperUsuario para administradores
-    rootSUMR.render(
+    root.render(
         <>
             <ManejoSuperUsuario title="Administradores" userType="administrador" csrf_token={csrf_token}/>
             <ManejoSuperUsuario title="Cajeros" userType="cajero" csrf_token={csrf_token}/>
+            <ManejoRangosDistancias csrf_token={csrf_token}/>
         </>
     );
 

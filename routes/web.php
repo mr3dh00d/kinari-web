@@ -34,9 +34,14 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
         
         Route::prefix('configuracion')->group(function () {
             Route::get('/', [Controllers\ConfiguracionController::class, 'index']);
+
             Route::post('/obtenerSuperUsuario', [Controllers\ConfiguracionController::class, 'obtenerSuperUsuario']);
             Route::post('/guardarSuperUsuario', [Controllers\ConfiguracionController::class, 'guardarSuperUsuario']);
             Route::post('/eliminarSuperUsuario', [Controllers\ConfiguracionController::class, 'eliminarSuperUsuario']);
+
+            Route::post('/obtenerRangos', [Controllers\ConfiguracionController::class, 'obtenerRangos']);
+            Route::post('/guardarRangos', [Controllers\ConfiguracionController::class, 'guardarRangos']);
+            Route::post('/eliminarRangos', [Controllers\ConfiguracionController::class, 'eliminarRangos']);
         });
         
         // Route::get('/carrusel', function () {

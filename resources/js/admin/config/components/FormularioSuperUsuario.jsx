@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {Collapse} from 'bootstrap';
+import { lowerCase } from 'lodash';
 
 
 function FormularioSuperUsuario(props) {
@@ -13,7 +14,6 @@ function FormularioSuperUsuario(props) {
 
     function storage(event){
         event.preventDefault();
-        let valores = props.valuesForm;
         fetch('/configuracion/guardarSuperUsuario',{
             method: 'POST',
             headers: {
@@ -23,11 +23,11 @@ function FormularioSuperUsuario(props) {
             },
             body: JSON.stringify({
                 'user-type': props.userType,
-                'id': valores[props.userType+"-id"],
-                'nombre': valores[props.userType+"-nombre"],
-                'correo': valores[props.userType+"-correo"],
-                'password': valores[props.userType+"-password"],
-                'password_confirmation': valores[props.userType+"-repeat-password"],
+                'id': values[props.userType+"-id"],
+                'nombre': values[props.userType+"-nombre"],
+                'correo': values[props.userType+"-correo"],
+                'password': values[props.userType+"-password"],
+                'password_confirmation': values[props.userType+"-repeat-password"],
             })
         })
         .then(data => {return data.json();})
@@ -35,7 +35,7 @@ function FormularioSuperUsuario(props) {
             // console.log(result);
             if(result.errors){
                 // console.log('tenemos errores');
-                console.log(result);
+                // console.log(result);
                 props.setErrors(result);
             }else{
                 // console.log('Pos no tenemos errores');
@@ -51,10 +51,13 @@ function FormularioSuperUsuario(props) {
 
     function handleChange(event){
         const target = event.target;
-        const value = event.target.value;
+        const value = target.value;
         const name = target.name;
         let newValues = {...values};
         newValues[name] = value;
+        if(name.split('-')[1] == 'nombre' && !newValues.correoDisabled){
+            newValues[props.userType+'-correo'] = lowerCase(value.split(' ')[0])+"@kinari.lan";
+        }
         props.setValuesForm(newValues);
     }
 

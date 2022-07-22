@@ -21,15 +21,13 @@ function ManejoSuperUsuario (props) {
     const [superUsers, setSuperUsers] = useState();
     const [success, setSuccess] = useState(false);
     const [valuesForm, setValuesForm] = useState(defaultValuesForm);
-    // const [collapseFormSuperUser, setCollapseFormSuperUser] = useState();
     let collapseFormSuperUser;
-    // const [superUsers, setSuperUsers] = useState();
+    
     useEffect(() => {
         collapseFormSuperUser = new Collapse(document.getElementById("form-"+props.userType), {'toggle': false});
     });
 
     useEffect(() => {
-        // console.log('estoy en un super loop?');
         fetch('/configuracion/obtenerSuperUsuario',{
             method: 'POST',
             headers: {
@@ -50,27 +48,12 @@ function ManejoSuperUsuario (props) {
             setIcon(iconMinus);
             setValuesForm(defaultValuesForm);
             setSuccess(false);
-            // let inputId = document.getElementById(props.userType+"-id");
-            // let inputNombre = document.getElementById(props.userType+"-nombre");
-            // let inputCorreo = document.getElementById(props.userType+"-correo");
-
-            // inputId.value = '';
-            // inputNombre.value = '';
-            // inputCorreo.value = '';
-
-            // inputCorreo.disabled = false;
-
         }else{
             setIcon(iconPlus);
         }
         setErrors([]);
         collapseFormSuperUser.toggle();
     }
-
-
-    // if(valuesFrom.correoDisabled){
-    //     return <h1>caca</h1>;
-    // }
 
     return (
         <div className="row mb-3" id={props.userType+"Management"}>

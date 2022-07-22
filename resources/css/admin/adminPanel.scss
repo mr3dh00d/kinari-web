@@ -217,6 +217,7 @@ body#body-pd.body-pd, #body-pd .body-pd {
 
     .btn-primary {
         background-color: var(--first-color);
+        border: 0;
     }
 
     .btn-circle.btn-sm {
@@ -273,10 +274,10 @@ body#body-pd.body-pd, #body-pd .body-pd {
         background-size: 3rem;
     } */
 
-    .form-super-user input.form-control, .form-super-user button{
+    #setting-app input.form-control, #setting-app form button{
         border-radius: 0;
     }
-    .form-super-user button{
+    #setting-app form button{
         background-color: var(--first-color);
     }
 
