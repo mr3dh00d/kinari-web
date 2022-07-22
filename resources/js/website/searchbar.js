@@ -1,15 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import MenuLink from "./MenuLink";
+import Resultado from "./components/Resultado";
 
-// var MenuBarHTML = document.querySelector('body#carta .container #menu');
-
-// if(MenuBarHTML){
-//   const MenuBar = ReactDOM.createRoot(MenuBarHTML);
-
-// }
-// document.getElementById("query_search").addEventListener("keypress", Esearch);
-// document.getElementById("search_button").addEventListener("click", Search);
 let formularioBusqueda = document.getElementById("busq_form");
 
 if(formularioBusqueda){
@@ -21,7 +13,6 @@ if(formularioBusqueda){
   function Search(event) {
     event.preventDefault();
     var query = document.getElementById("query_search").value;
-    // console.log(query);
     fetch('/obtenerSecciones', {
         method: 'POST',
         headers:{
@@ -32,17 +23,16 @@ if(formularioBusqueda){
     })
     .then((data)=>{return data.json()})
     .then((res)=>{
-        // console.log(res);
-        renderMenuLinks(res, root);
+        renderResultados(res, root);
     })
     .catch((err)=>{console.log(err)});
   }
   
-  function renderMenuLinks(productos, root){
-    let links = [];
+  function renderResultados(productos, root){
+    let resultados = [];
     productos.forEach( (producto, key) => {
-        links.push(<MenuLink key={key} producto={producto}/>);
+        resultados.push(<Resultado key={key} producto={producto}/>);
     });
-    root.render(links);
+    root.render(resultados);
   }
 }

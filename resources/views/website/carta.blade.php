@@ -15,22 +15,13 @@
 @endsection
 
 @section('content')
-<!-- puede que mueva la cosa a otro container
--->
     <div class="container my-sm-3">
-
-
-
-      {{--<div id="espacio" class="row">
-        <div class="col-12 section-content">
-          <div class="row row-cols-2 row-cols-lg-3 gy-2"> 
-          </div>
-        </div>
-      </div>--}}
-
       <div id="menu" class="row align-items-center text-center flex-nowrap py-1 ">
+        <a class="category-name py-2 mx-2" href="#busqueda">
+          <i class="fa fa-search"></i>
+        </a>
         @foreach ($secciones as $seccion)
-            <a class="col-md category-name py-2 mx-2" href="#{{$seccion->id}}">
+            <a class="col-auto category-name py-2 mx-2" href="#{{$seccion->id}}">
               {{$seccion->nombre}}
             </a>
         @endforeach
@@ -55,7 +46,7 @@
               </form>
             </div>
             <div class="col-12 section-content">
-              <div id="espacio" class="row row-cols-2 row-cols-lg-3 gy-2"></div>
+              <div id="espacio" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-2"></div>
             </div>
           </div>
           @foreach ($secciones as $seccion)
@@ -67,15 +58,29 @@
                   </div>
                 </div>
                 <div class="col-12 section-content">
-                  <div class="row row-cols-2 row-cols-lg-3 gy-2">
+                  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-2">
                     @foreach ($seccion->productos as $producto)
                       <div class="col">
-                        <div class="card h-100">
+                        <div class="card h-100 d-none d-md-block">
                           <img class="estilo-img card-img-top" src="{{$producto->imagen->ruta}}" alt="{{$producto->imagen->descripcion}}">
                           <div class="card-body">
                             <h5 class="card-title">{{$producto->nombre}}</h5>
                             <p class="card-text">{{$producto->descripcion}}</p>
                             <div class="product-price ff-kaushan">${{number_format($producto->precio, 0, ',', '.')}}</div>
+                          </div>
+                        </div>
+                        <div class="card d-md-none">
+                          <div class="row g-0">
+                            <div class="col-6">
+                              <img class="estilo-img w-100 h-100" src="{{$producto->imagen->ruta}}" alt="{{$producto->imagen->descripcion}}">
+                            </div>
+                            <div class="col">
+                              <div class="card-body h-100">
+                                <h5 class="card-title align-middle">{{$producto->nombre}}</h5>
+                                <p class="card-text">{{$producto->descripcion}}</p>
+                                <div class="product-price ff-kaushan">${{number_format($producto->precio, 0, ',', '.')}}</div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>    

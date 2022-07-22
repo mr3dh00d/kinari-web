@@ -215,7 +215,7 @@ a.footer-btn-link:hover{
 }
 .section-content .card .card-body .product-price {
 	background-color: var(--red);
-	position: absolute;
+	/* position: absolute; */
 	bottom: 0;
 	left: 0;
 	text-align: center;
@@ -293,6 +293,22 @@ a.footer-btn-link:hover{
 #btn_logout{
     color: #000;
     text-decoration: none;
+}
+#busqueda .input-group input{
+    background-color: #353535;
+}
+#busqueda .input-group *{
+    color: white;
+    border: 0;
+    border-radius: 0;
+}
+#busqueda .input-group button{
+    transition: all;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+#busqueda .input-group button:hover{
+    background-color: rgb(120, 0, 0) !important;
 }
 
 @keyframes neon {

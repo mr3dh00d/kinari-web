@@ -48,7 +48,10 @@ class WebsiteController extends Controller
     //         ->get();
     // }
     public function obtenerSecciones(Request $request){
-        return Models\Producto::whereJsonContains('palabras_claves', $request->get('query'))->with('imagen')->get();  
+        return Models\Producto::whereJsonContains('palabras_claves', $request->get('query'))
+            ->orWhere('descripcion', 'like', '%'.$request->get('query').'%')
+            ->orWhere('nombre', 'like', '%'.$request->get('query').'%')
+            ->with('imagen')->get();  
     }
 
     public function resumen(){
