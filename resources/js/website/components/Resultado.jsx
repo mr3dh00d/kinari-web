@@ -33,7 +33,10 @@ function Resultado(props){
                 <img className="estilo-img card-img-top" src={producto.imagen.ruta} alt={producto.imagen.descripcion}></img>
                 <div className="card-body">
                     <h5 className="card-title">{producto.nombre}</h5>
-                    <p className="card-text">{producto.descripcion}</p>
+                    <p className="card-text">
+                        {producto.descripcion.substr(0, 40)}
+                        {producto.descripcion.length > 40 ? '...' : ''}
+                        </p>
                     <div className="product-price ff-kaushan">{numberFormat.format(producto.precio)}</div> 
                     {/* cambiar a javascript */}
                 </div>
@@ -46,7 +49,10 @@ function Resultado(props){
                     <div className="col">
                         <div className="card-body h-100">
                         <h5 className="card-title align-middle">{producto.nombre}</h5>
-                        <p className="card-text">{producto.descripcion}</p>
+                        <p className="card-text">
+                            {producto.descripcion.substr(0, 20)}
+                            {producto.descripcion.length > 20 ? '...' : ''}
+                        </p>
                         <div className="product-price ff-kaushan">{numberFormat.format(producto.precio)}</div>
                         </div>
                     </div>

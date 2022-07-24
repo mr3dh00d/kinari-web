@@ -65,7 +65,10 @@
                           <img class="estilo-img card-img-top" src="{{$producto->imagen->ruta}}" alt="{{$producto->imagen->descripcion}}">
                           <div class="card-body">
                             <h5 class="card-title">{{$producto->nombre}}</h5>
-                            <p class="card-text">{{$producto->descripcion}}</p>
+                            <p class="card-text">
+                              {{Str::substr($producto->descripcion, 0, 40)}}
+                              {{Str::length($producto->descripcion) > 40 ? '...' : ''}}
+                            </p>
                             <div class="product-price ff-kaushan">${{number_format($producto->precio, 0, ',', '.')}}</div>
                           </div>
                         </div>
@@ -77,7 +80,10 @@
                             <div class="col">
                               <div class="card-body h-100">
                                 <h5 class="card-title align-middle">{{$producto->nombre}}</h5>
-                                <p class="card-text">{{$producto->descripcion}}</p>
+                                <p class="card-text">
+                                  {{Str::substr($producto->descripcion, 0, 20)}}
+                                  {{Str::length($producto->descripcion) > 20 ? '...' : ''}}
+                                </p>
                                 <div class="product-price ff-kaushan">${{number_format($producto->precio, 0, ',', '.')}}</div>
                               </div>
                             </div>

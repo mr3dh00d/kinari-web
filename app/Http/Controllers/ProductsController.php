@@ -48,7 +48,7 @@ class ProductsController extends Controller
         $request->validate([
             'seccion' => 'required|integer',
             'nombre' => 'required',
-            'imagen' => 'required|image',
+            'imagen' => 'required|image|dimensions:max_width=500,max_height=500',
             'imagen_desc' => 'required',
             'precio' => 'required|integer',
             'palab_clave' => 'required',
@@ -57,6 +57,7 @@ class ProductsController extends Controller
             'nombre.required' => 'El nombre es requerido',
             'imagen.required' => 'La imagen es requerida',
             'imagen.image' => 'El archivo debe de ser una imagen',
+            'imagen.dimensions' => 'La imagen debe tener un tamaño máximo de :max_width x :max_height',
             'imagen_desc.required' => 'La imagen debe llevar descripcion',
             'precio.required' => 'El precio es requerido',
             'precio.number' => 'El precio debe ser un número',
@@ -152,8 +153,10 @@ class ProductsController extends Controller
         if($request->file('imagen') !== null){
             $request->validate([
                 'imagen' => 'required|image',
+                'imagen' => 'required|image|dimensions:max_width=500,max_height=500',
             ],[
                 'imagen.image' => 'El archivo debe de ser una imagen',
+                'imagen.dimensions' => 'La imagen debe tener un tamaño máximo de :max_width x :max_height',
             ]);
 
             //eliminar imagen antigua
