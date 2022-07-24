@@ -11,50 +11,53 @@
 @endsection
 
 @section('content')
-  <div class="container my-3 home-content">
-      <div class="row">
-        <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner d-flex align-items-center">
-            @foreach ($carruseles as $key => $carrusel)
-              <div class="carousel-item @if($key == 0) active @endif">
-                <img src="{{$carrusel->ruta}}" class="img-fluid" alt="{{$carrusel->descripcion}}">
-              </div>  
-            @endforeach
-            </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+  <div id="content-wrap">
+    
+    <div class="container my-3 home-content">
+        <div class="row">
+          <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner d-flex align-items-center">
+              @foreach ($carruseles as $key => $carrusel)
+                <div class="carousel-item @if($key == 0) active @endif">
+                  <img src="{{$carrusel->ruta}}" class="img-fluid" alt="{{$carrusel->descripcion}}">
+                </div>  
+              @endforeach
+              </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+  
+      <div class="row py-3 home-title">
+        <div class="col text-center ff-kaushan">
+          <h2>
+            <a href="/carta">
+              ¡Conoce nuestra carta!
+            </a>
+          </h2>
         </div>
       </div>
-
-    <div class="row py-3 home-title">
-      <div class="col text-center ff-kaushan">
-        <h2>
-          <a href="/carta">
-            ¡Conoce nuestra carta!
-          </a>
-        </h2>
-      </div>
-    </div>
-
-    <div class="row carta row-cols-1 row-cols-md-2 row-cols-md-3 g-3">
-      @foreach ($destacados as $producto)
-        <div class="col">
-          <a class="card" href="/carta#{{$producto->seccion->id}}">
-            <div class="card-img-top d-flex align-items-center">
-              <img src="{{$producto->imagen->ruta}}" class="img-fluid" alt="{{$producto->imagen->descripcion}}">
-            </div>
-            <div class="card-body d-flex align-items-center text-center">
-              <p class="card-text">{{$producto->nombre}}</p>
-            </div>
-          </a>
-        </div>
-      @endforeach
+  
+      <div class="row carta row-cols-1 row-cols-md-2 row-cols-md-3 g-3">
+        @foreach ($destacados as $producto)
+          <div class="col">
+            <a class="card" href="/carta#{{$producto->seccion->id}}">
+              <div class="card-img-top d-flex align-items-center">
+                <img src="{{$producto->imagen->ruta}}" class="img-fluid" alt="{{$producto->imagen->descripcion}}">
+              </div>
+              <div class="card-body d-flex align-items-center text-center">
+                <p class="card-text">{{$producto->nombre}}</p>
+              </div>
+            </a>
+          </div>
+        @endforeach
+  </div>
 
       {{-- <div class="col-12 col-md-6 col-xl-4 py-3">
         <div class="card">

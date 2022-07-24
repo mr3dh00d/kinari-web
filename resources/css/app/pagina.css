@@ -7,17 +7,26 @@
 
 body{
     background-color: #1D1D1D !important;
-    font-family: 'Lato' !important;
+    font-family: 'Montserrat', sans-serif !important;
     font-weight: lighter !important;
     color: #fff !important;
 }
 .ff-kaushan{
     font-family: 'Kaushan Script' !important;
 }
+.ff-nunito{
+    font-family: 'Nunito' !important;
+}
+.ff-opensans{
+    font-family: 'Open Sans' !important;
+}
+.ff-montserrat{
+    font-family: 'Montserrat' !important;
+}
 .navbar{
     color: #fff;
     border-bottom: var(--red) .2rem solid;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .nav-link:hover, .nav-link:focus{
     color: var(--red) !important;
@@ -45,7 +54,7 @@ button.btn-outline-success {
     overflow-x: auto;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 12;
 }
 #menu a {
 	color: #fff;
@@ -60,7 +69,14 @@ button.btn-outline-success {
 .category-name:hover{
     background-color: rgb(100, 0, 0);
 }
-
+#clear-search{
+    /* display: none; */
+    position: absolute;
+    right: 10rem;
+    padding: .6rem;
+    z-index: 10;
+    opacity: 50%;
+}
 .search-btn{
     background-color: var(--red) !important;
     color: #fff;
@@ -81,7 +97,14 @@ button.btn-outline-success {
 .btn-check:focus + .btn-outline-light, .btn-outline-light:focus{
     box-shadow: none !important;
 } */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
 
+#content-wrap {
+    padding-bottom: 14rem;
+}
 #productos{
     background-color: #151515;
     border: solid .1rem var(--red);
@@ -90,6 +113,25 @@ button.btn-outline-success {
     box-shadow: rgb(155, 155, 155);
     border-radius: 5px;
     margin-bottom: 20px; */
+}
+#productos .card{
+    background-color: #353535;
+}
+#productos .card .card-title{
+    font-weight: bold;
+}
+/* #productos .card .card-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} */
+#productos .card .card-body .card-text{
+    white-space: nowrap;
+    overflow: hidden;
+}
+#productos .card .card-body .descripcion::after{
+    content: '...';
 }
 /* hr.rounded {
     border-top: 8px solid rgb(75, 75, 75);
@@ -119,7 +161,8 @@ a.card:hover{
     border-radius: 4px;
 }
 .estilo-img{
-    height: 8rem;
+    min-height: 9rem;
+    max-height: 9rem;
     object-fit: cover;
 }
 .btn-outline-danger{
@@ -140,6 +183,11 @@ footer{
     background-repeat: no-repeat;
     border-top: var(--red) .2rem solid;
     text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    height: 12rem;
+    max-height: 12rem;
+    width: 100%;
 }
 a.footer-btn-link{
     font-size: 1.2rem;
@@ -152,6 +200,9 @@ a.footer-btn-link:hover{
 .footer-bottom{
     border-top: var(--red) .1rem solid;
     font-size: .8rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 .logo-navbar{
     width: 4rem;
@@ -168,7 +219,7 @@ a.footer-btn-link:hover{
     border-radius: .5rem;
     width: 100%;
 }
-.home-content.container .carta.row .card{    
+.home-content.container .carta.row .card{
     height: 100%;
     border: 0;
     background-color: var(--red);
@@ -203,9 +254,9 @@ a.footer-btn-link:hover{
 	background: #080808;
 }
 
-.section-content .card .card-body{
+/* #productos .card .card-body{
 	min-height: 9rem;
-}
+} */
 
 .section-content .card .card-text{
     /* white-space: nowrap;
@@ -231,7 +282,7 @@ a.footer-btn-link:hover{
     }
     .home-content.container .carta.row .card .card-img-top{
         max-height: 12.5rem;
-    }   
+    }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -247,12 +298,12 @@ a.footer-btn-link:hover{
     a.footer-btn-link{
         font-size: 1.5rem;
     }
-    .footer-bottom{
+    /* .footer-bottom{
         font-size: 1rem;
-    }
+    } */
     .home-content.container .carta.row .card .card-img-top{
         max-height: 15rem;
-    }   
+    }
 }
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -261,7 +312,7 @@ a.footer-btn-link:hover{
     }
     .home-content.container .carta.row .card .card-img-top{
         max-height: 15rem;
-    }    
+    }
 }
 .box{
     padding: 5rem;

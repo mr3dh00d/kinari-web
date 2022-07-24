@@ -1,4 +1,4 @@
-<footer class="ff-kaushan">
+<footer class="ff-montserrat">
     <div class="container py-3">
         <div class="row align-items-center">
             <div class="col-12 text-center col-md-auto">
@@ -7,7 +7,6 @@
             <div class="col text-center col-md-auto">
                 <a class="footer-btn-link" href="https://www.instagram.com/kinari.sushi/?hl=es-la" target="blank">
                     <i class="fa-brands fa-instagram"></i>
-                    @kinari.sushi
                 </a>
             </div>
             {{-- <div class="col text-center col-md-auto">

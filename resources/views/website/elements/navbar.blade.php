@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark ff-kaushan">
+<nav class="navbar navbar-expand-lg navbar-dark ff-montserrat">
     <div class="container">
       <a class="navbar-brand" href="/">
         <img src="/img/logo.png" class="img-fluid logo-navbar" alt="">

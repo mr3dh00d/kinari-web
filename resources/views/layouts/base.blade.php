@@ -22,11 +22,13 @@
   </head>
   <body id="@yield('idBody')" class="@yield('classBody')">
 
-    @yield('header')
-
-    @yield('content')
-
-    @yield('footer')
+    <div id="page-container">
+      @yield('header')
+  
+      @yield('content')
+  
+      @yield('footer')
+    </div>
 
     <!--App JS-->
     <script src="{{asset('js/app.js')}}"></script>
