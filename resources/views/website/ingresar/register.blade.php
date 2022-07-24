@@ -12,13 +12,13 @@
 
 @section('content')
     <div id="content-wrap">
-        <div id="registro" class="container my-sm-3">
+        <div id="registro" class="container my-3">
             <div class="row align-items-center">
-                <div class="col align-self-center text-center">
+                <div class="col-12 col-lg-6 align-self-center text-center">
                     <h2>Bienvenido a <em class="ff-kaushan">Kinari</em></h2>
                     <img src="/img/logo.png" class="img-fluid" width="250px" alt="">
                 </div>
-                <div class="col align-content-center">
+                <div class="col-12 col-lg-6 align-content-center">
                     <h3>Registrate</h3>
                     @isset($mensaje)
                         <div class="alert alert-success text center" role="alert">{{$mensaje}}</div>

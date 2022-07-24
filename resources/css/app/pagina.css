@@ -60,6 +60,18 @@ button.btn-outline-success {
 	color: #fff;
 	text-decoration: none;
 }
+nav .dropdown-menu{
+    background-color: #151515;
+    border-radius: 0;
+}
+nav .dropdown-menu .dropdown-item{
+    color: white !important;
+}
+nav .dropdown-menu .dropdown-item:hover,
+nav .dropdown-menu .dropdown-item:active,
+nav .dropdown-menu .dropdown-item:focus{
+    background-color: #1D1D1D;
+}
 .category-name{
     min-width: 10rem;
     width: auto !important;
@@ -361,7 +373,12 @@ a.footer-btn-link:hover{
 #busqueda .input-group button:hover{
     background-color: rgb(120, 0, 0) !important;
 }
-
+#registro .form-control, #ingreso .form-control {
+    border-radius: 0;
+    border: 0;
+    background-color: #101010;
+    color: white;
+}
 @keyframes neon {
     from {
       text-shadow:

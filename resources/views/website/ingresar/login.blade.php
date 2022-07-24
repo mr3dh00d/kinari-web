@@ -12,13 +12,13 @@
 
 @section('content')
     <div id="content-wrap">
-        <div id="login" class="container my-sm-3">
+        <div id="ingreso" class="container my-3">
             <div class="row align-items-center">
-                <div class="col align-self-center text-center">
+                <div class="col-12 col-lg-6 align-self-center text-center">
                     <h2>Bienvenido a <em class="ff-kaushan">Kinari</em></h2>
                     <img src="/img/logo.png" class="img-fluid" width="250px" alt="">
                 </div>
-                <div class="col align-content-center" style="height: 23.4rem">
+                <div class="col-12 col-lg-6 align-content-center" style="height: 23.4rem">
                     <h3>Inicia Sesión</h3>
                     @error('email')
                         <div class="alert alert-danger" role="alert"">
@@ -34,8 +34,8 @@
                         <div class="mb-3">
                           <label class="form-label">Contraseña</label>
                           <input type="password" class="form-control @error('email') is-invalid @enderror" id="password" name="password">
-                          <h6>¿No tienes una cuenta? <a class="link-danger" href="/registro">Registrate aqui</a></h6>
                         </div>
+                        <h6>¿No tienes una cuenta? <a class="link-danger" href="/registro">Registrate aqui</a></h6>
                         <button type="submit" class="btn btn-outline-danger">Ingresar</button>
                       </form>
                 </div>

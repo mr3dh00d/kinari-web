@@ -30,7 +30,7 @@
                   <form method="POST" action="/logout" name="logOut"> 
                     @csrf
                     <li>
-                      <button type="submit" class="btn btn-link" id="btn_logout">
+                      <button type="submit" class="btn btn-link dropdown-item" id="btn_logout">
                         <span class="nav_name">Cerrar Sesion</span>
                       </button>
                     </li>
