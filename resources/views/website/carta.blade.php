@@ -77,7 +77,7 @@
                                       {{Str::substr($producto->descripcion, 0, 30)}}
                                     </p>
                                   </div>
-                                  <div class="product-price ff-kaushan">${{number_format($producto->precio, 0, ',', '.')}}</div>
+                                  <div class="product-price ff-kaushan pointer" producto-id="{{$producto->id}}">${{number_format($producto->precio, 0, ',', '.')}}</div>
                                 </div>
                               </div>
                             </div>
@@ -95,5 +95,6 @@
 @endsection
 
 @section('footer')
+    @include('website.elements.modal-producto')
     @include('website.elements.footer')
 @endsection

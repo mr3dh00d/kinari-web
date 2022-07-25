@@ -47,6 +47,7 @@ Route::get('/checkout', [Controllers\WebsiteController::class, 'checkout']);
 Route::get('/resultado', [Controllers\WebsiteController::class, 'resultado']);
 
 Route::post('/obtenerSecciones', [Controllers\WebsiteController::class, 'obtenerSecciones']);
+Route::post('/obtenerProducto', [Controllers\WebsiteController::class, 'obtenerProducto']);
 
 Route::get('/acceso', [Controllers\AutenticacionController::class, 'login']);
 Route::post('/autenticacion', [Controllers\AutenticacionController::class, 'autenticacion']);

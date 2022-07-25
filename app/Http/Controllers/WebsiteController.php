@@ -53,7 +53,11 @@ class WebsiteController extends Controller
             ->orWhere('nombre', 'like', '%'.$request->get('query').'%')
             ->with('imagen')->get();  
     }
-
+    public function obtenerProducto(Request $request) {
+        return Models\Producto::where('id', $request->get('id'))
+            ->with('imagen')
+            ->first();
+    }
     public function resumen(){
         return view('website.pago.resumen');
     }

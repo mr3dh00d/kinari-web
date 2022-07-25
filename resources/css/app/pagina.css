@@ -169,6 +169,9 @@ a.card:hover{
     color: #fff;
     cursor: pointer;
 }
+.pointer:hover{
+    cursor: pointer;
+}
 .card.h-100{
     border-radius: 4px;
 }
@@ -276,6 +279,15 @@ a.footer-btn-link:hover{
     overflow: hidden */
     margin-bottom: 2rem;
 }
+#productos .product-price{
+    transition: all;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    
+}
+#productos .product-price:hover{
+    background-color: rgb(100, 0, 0);
+}
 .section-content .card .card-body .product-price {
 	background-color: var(--red);
 	/* position: absolute; */
@@ -378,6 +390,26 @@ a.footer-btn-link:hover{
     border: 0;
     background-color: #101010;
     color: white;
+}
+#modal-producto .modal-content, #modal-producto .modal-header{
+    background-color: #101010;
+    border: 0;
+    border-radius: 0;
+}
+#modal-producto .modal-title{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+#modal-producto .modal-content .price{
+    font-size: 1.5rem;
+}
+#modal-producto .modal-content .btn{
+    background-color: var(--red);
+    color: white;
+    border: 0;
+    border-radius: 10rem;
+    width: 40px;
+    height: 40px;
 }
 @keyframes neon {
     from {

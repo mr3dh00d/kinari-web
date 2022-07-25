@@ -1,4 +1,5 @@
 import React from "react";
+import abrirModal from "../modal-producto";
 
 function Resultado(props){
     const numberFormat = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
@@ -18,7 +19,7 @@ function Resultado(props){
                                 {producto.descripcion.substr(0, 30)}
                             </p>
                         </div>
-                        <div className="product-price ff-kaushan">{numberFormat.format(producto.precio)}</div>
+                        <div className="product-price ff-kaushan pointer" producto-id={producto.id} onClick={abrirModal}>{numberFormat.format(producto.precio)}</div>
                         </div>
                     </div>
                 </div>
