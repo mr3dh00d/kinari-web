@@ -92,9 +92,15 @@
         </div>
       </div>
     </div>
+    
+    <button class="btn-carrito btn" data-bs-toggle="modal" data-bs-target="#modal-carrito">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+
 @endsection
 
 @section('footer')
     @include('website.elements.modal-producto')
+    @include('website.elements.modal-carrito')
     @include('website.elements.footer')
 @endsection

@@ -41,19 +41,39 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
 Route::get('/', [Controllers\WebsiteController::class, 'home']);
 Route::get('/carta', [Controllers\WebsiteController::class, 'carta']);
 
-Route::get('/resumen', [Controllers\WebsiteController::class, 'resumen']);
-Route::get('/seleccionar-direccion', [Controllers\WebsiteController::class, 'seleccionarDireccion']);
-Route::get('/checkout', [Controllers\WebsiteController::class, 'checkout']);
-Route::get('/resultado', [Controllers\WebsiteController::class, 'resultado']);
 
 Route::post('/obtenerSecciones', [Controllers\WebsiteController::class, 'obtenerSecciones']);
 Route::post('/obtenerProducto', [Controllers\WebsiteController::class, 'obtenerProducto']);
 
+/**
+ * Rutas de carrito
+ */
+Route::prefix('/carrito')->group(function () {
+    Route::post('/agregar', [Controllers\WebsiteController::class, 'agregarCarrito']);
+    Route::post('/eliminar', [Controllers\WebsiteController::class, 'eliminarCarrito']);
+    Route::post('/obtener', [Controllers\WebsiteController::class, 'obtenerCarrito']);
+});
+
+/**
+ * Rutas de Accesso y registro
+ */
 Route::get('/acceso', [Controllers\AutenticacionController::class, 'login']);
 Route::post('/autenticacion', [Controllers\AutenticacionController::class, 'autenticacion']);
 Route::get('/registro', [Controllers\AutenticacionController::class, 'register']);
 Route::post('/guardarUsuario', [Controllers\AutenticacionController::class, 'guardarUsuario']);
 Route::post('/logout', [Controllers\AutenticacionController::class, 'logout'])->name('logOut');
+
+
+
+/**
+ * Rutas de checkout
+ */
+// Route::get('/resumen', [Controllers\WebsiteController::class, 'resumen']);
+// Route::get('/seleccionar-direccion', [Controllers\WebsiteController::class, 'seleccionarDireccion']);
+// Route::get('/checkout', [Controllers\WebsiteController::class, 'checkout']);
+// Route::get('/resultado', [Controllers\WebsiteController::class, 'resultado']);
+
+
 
 // Route::get('/run-migrations', function () {
 //     return Artisan::call('migrate', [

@@ -391,10 +391,21 @@ a.footer-btn-link:hover{
     background-color: #101010;
     color: white;
 }
-#modal-producto .modal-content, #modal-producto .modal-header{
+#modal-producto .modal-content,
+#modal-producto .modal-header{
     background-color: #101010;
     border: 0;
     border-radius: 0;
+}
+
+#modal-carrito .modal-content,
+#modal-carrito .modal-header{
+    background-color: #101010;
+    border: 0;
+    border-radius: 0;
+}
+#modal-carrito .modal-content{
+    background-color: #1D1D1D;
 }
 #modal-producto .modal-title{
     font-size: 1.8rem;
@@ -410,6 +421,18 @@ a.footer-btn-link:hover{
     border-radius: 10rem;
     width: 40px;
     height: 40px;
+}
+.btn-carrito{
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--red) !important;
+    position: fixed;
+    z-index: 15;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 10rem !important;
+    font-size: 1.87rem !important;
+    color: white !important;
 }
 @keyframes neon {
     from {

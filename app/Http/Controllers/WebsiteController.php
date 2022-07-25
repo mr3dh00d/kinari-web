@@ -58,17 +58,33 @@ class WebsiteController extends Controller
             ->with('imagen')
             ->first();
     }
-    public function resumen(){
-        return view('website.pago.resumen');
+
+
+    public function agregarCarrito(Request $request) {
+        return null;
     }
-    public function seleccionarDireccion(){
-        return view('website.pago.direccion');
+    public function eliminarCarrito(Request $request) {
+        return null;
     }
-    public function checkout(){
-        return view('website.pago.checkout');
+    public function obtenerCarrito(Request $request) {
+        return null;
     }
-    public function resultado(){
-        return view('website.pago.resultado');
-    }
+    
+
+
+
+
+    // public function resumen(){
+    //     return view('website.pago.resumen');
+    // }
+    // public function seleccionarDireccion(){
+    //     return view('website.pago.direccion');
+    // }
+    // public function checkout(){
+    //     return view('website.pago.checkout');
+    // }
+    // public function resultado(){
+    //     return view('website.pago.resultado');
+    // }
 }
 
