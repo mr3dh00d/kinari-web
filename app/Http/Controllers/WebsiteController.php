@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models;
+use Darryldecode\Cart\Facades\CartFacade as Cart;
 
 class WebsiteController extends Controller
 {
@@ -61,13 +62,39 @@ class WebsiteController extends Controller
 
 
     public function agregarCarrito(Request $request) {
-        return null;
+        $producto = Models\Producto::findOrFail($request->get('id'));
+        $action = $request->get('action');
+        if(!is_null(Cart::get($producto->id))){
+            if ($action == 'add'){
+                Cart::update($producto->id, array(
+                    'quantity' => 1,
+                ));
+            }else if($action == 'delete'){
+                Cart::update($producto->id, array(
+                    'quantity' => -1,
+                ));
+            }
+            return ['status' => 'actualice'];
+        }else if(is_null(Cart::get($producto->id)) && $action == 'add'){
+            Cart::add(array(
+                'id' => $producto->id,
+                'name' => $producto->nombre,
+                'price' => $producto->precio,
+                'quantity' => 1,
+                'attributes' => array(),
+                'associatedModel' => $producto
+            ));
+            return ['status' => 'añadí'];
+        }
     }
     public function eliminarCarrito(Request $request) {
-        return null;
+        // return [$request->get('id')];
+        Cart::remove($request->get('id'));
+        return ['status' => 'success'];
     }
     public function obtenerCarrito(Request $request) {
-        return null;
+        // Cart::clear();
+        return Cart::getContent();
     }
     
 

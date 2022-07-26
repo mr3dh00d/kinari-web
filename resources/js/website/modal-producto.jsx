@@ -18,7 +18,7 @@ if (botones_productos){
 }
 
 function abrirModal(event){
-    let id = event.target.getAttribute('producto-id');
+    let id = event.currentTarget.getAttribute('producto-id');
     fetch('/obtenerProducto', {
         method: 'POST',
         headers:{

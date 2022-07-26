@@ -434,6 +434,23 @@ a.footer-btn-link:hover{
     font-size: 1.87rem !important;
     color: white !important;
 }
+
+#modal-carrito .update-cart,
+#modal-carrito .delete-cart{
+    border: solid .2rem var(--red);
+    transition: all;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+#modal-carrito .delete-cart{
+    background-color: var(--red)
+}
+#modal-carrito .update-cart:hover{
+    background-color: var(--red)
+}
+#modal-carrito .delete-cart:hover{
+    background-color: transparent !important;
+}
 @keyframes neon {
     from {
       text-shadow:

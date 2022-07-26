@@ -1,4 +1,5 @@
 import React from "react";
+import { addToCart } from '../carrito';
 
 function ModalProductoContent(props){
     let producto = props.producto;
@@ -14,7 +15,7 @@ function ModalProductoContent(props){
                     <p  className="py-2" style={{'whiteSpace': 'pre-line'}}>{producto.descripcion}</p>
                     <div className="d-flex justify-content-between">
                         <p className="price mb-0 ff-kaushan">{numberFormat.format(producto.precio)}</p>
-                        <button className="btn" producto-id={producto.id}><i className="fa fa-plus"></i></button>
+                        <button className="btn" action="add" producto-id={producto.id} onClick={addToCart} data-bs-dismiss="modal"><i className="fa fa-plus"></i></button>
                     </div>
             </div>
         </>

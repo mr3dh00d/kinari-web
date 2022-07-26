@@ -1,4 +1,3 @@
-import { isFunction } from "lodash";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Resultado from "./components/Resultado";

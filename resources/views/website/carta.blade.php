@@ -93,7 +93,8 @@
       </div>
     </div>
     
-    <button class="btn-carrito btn" data-bs-toggle="modal" data-bs-target="#modal-carrito">
+    {{-- <button class="btn-carrito btn" data-bs-toggle="modal" data-bs-target="#modal-carrito"> --}}
+    <button class="btn-carrito btn">
       <i class="fa-solid fa-cart-shopping"></i>
     </button>
 
