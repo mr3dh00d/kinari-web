@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\AdminLoginController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers;
 
@@ -57,11 +58,11 @@ Route::prefix('/carrito')->group(function () {
 /**
  * Rutas de Accesso y registro
  */
-Route::get('/acceso', [Controllers\AutenticacionController::class, 'login']);
-Route::post('/autenticacion', [Controllers\AutenticacionController::class, 'autenticacion']);
-Route::get('/registro', [Controllers\AutenticacionController::class, 'register']);
-Route::post('/guardarUsuario', [Controllers\AutenticacionController::class, 'guardarUsuario']);
-Route::post('/logout', [Controllers\AutenticacionController::class, 'logout'])->name('logOut');
+// Route::get('/acceso', [Controllers\AutenticacionController::class, 'login']);
+// Route::post('/autenticacion', [Controllers\AutenticacionController::class, 'autenticacion']);
+// Route::get('/registro', [Controllers\AutenticacionController::class, 'register']);
+// Route::post('/guardarUsuario', [Controllers\AutenticacionController::class, 'guardarUsuario']);
+// Route::post('/logout', [Controllers\AutenticacionController::class, 'logout'])->name('logOut');
 
 
 

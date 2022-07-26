@@ -434,7 +434,9 @@ a.footer-btn-link:hover{
     font-size: 1.87rem !important;
     color: white !important;
 }
-
+.jump {
+    animation: jump 750ms ease-in-out infinite;
+}
 #modal-carrito .update-cart,
 #modal-carrito .delete-cart{
     border: solid .2rem var(--red);
@@ -450,6 +452,14 @@ a.footer-btn-link:hover{
 }
 #modal-carrito .delete-cart:hover{
     background-color: transparent !important;
+}
+@keyframes jump {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-1rem);
+    }
 }
 @keyframes neon {
     from {

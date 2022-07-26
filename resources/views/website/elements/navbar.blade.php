@@ -20,7 +20,7 @@
                     Local
                 </a>
             </li> --}}
-            @auth
+            {{-- @auth
               <li class="nav-item text-center dropdown">
                 <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fa-solid fa-user"></i>
@@ -49,7 +49,7 @@
                       <li><a class="dropdown-item" href="/registro">Registrarse</a></li>
                   </ul>
               </li>
-            @endauth
+            @endauth --}}
         </ul>
       </div>
     </div>

@@ -4,7 +4,6 @@ import { addToCart, removeFromCart } from "../carrito";
 export default function FilaCarrito(props) {
     const item = props.item;
     const numberFormat = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
-    // console.log(item);
     return (
         <div className="row row-cols-2 justify-items-between py-2">
             <div className="col mb-2 px-0">

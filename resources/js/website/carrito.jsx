@@ -35,7 +35,6 @@ function UpdateCart(){
 }
 
 function renderInCart(content){
-    console.log('renderizando...');
     let result = [];
     Object.entries(content).forEach(entry => {
         const [key, item] = entry;
@@ -44,8 +43,8 @@ function renderInCart(content){
 
     if(Object.entries(content).length == 0){
         result.push(
-            // <h1 key={0}>No hay productos</h1>
             <div
+                key={0}
                 style={{opacity: '20%'}} 
                 className="row">
                 <div className="col-12 text-center">
@@ -66,13 +65,13 @@ function renderInCart(content){
             {result}
         </div>
     );
-    console.log('renderizado!');
 }
 
 export function addToCart(event){
     let target = event.currentTarget;
     let id = target.getAttribute('producto-id');
     let action = target.getAttribute('action');
+    let btnCarrito = document.getElementById('btn-carrito');
     fetch('/carrito/agregar', {
         method: 'POST',
         headers:{
@@ -83,6 +82,8 @@ export function addToCart(event){
     })
     .then(()=>{UpdateCart()})
     .catch((err)=>{console.log(err)});
+    btnCarrito.classList.add('jump');
+    setTimeout(()=>{btnCarrito.classList.remove('jump')}, 750);
 }
 export function removeFromCart(event){
     let target = event.currentTarget;
