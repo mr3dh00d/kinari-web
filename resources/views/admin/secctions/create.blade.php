@@ -2,10 +2,6 @@
 @extends('layouts.panel')
 
 @section('subcontent')
-
-<!-- PopUp ("modal") 
-
--->
 <div class="container">
     <div class="row">
         <div class="col">

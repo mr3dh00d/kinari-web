@@ -176,7 +176,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        
+        /**
+         * Shopping Cart Service Provider
+         */
+        Darryldecode\Cart\CartServiceProvider::class,
     ],
 
     /*

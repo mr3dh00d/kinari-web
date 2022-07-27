@@ -5,7 +5,7 @@
 @endsection
 
 @section('subcontent')
-<div class="container mt-5 productos" id="lista_prod">
+<div class="container mt-5 productos mb-3" id="lista_prod">
     <div class="row">
         <div class="col">
             <h1>Productos en {{$seccion->nombre}}</h1>

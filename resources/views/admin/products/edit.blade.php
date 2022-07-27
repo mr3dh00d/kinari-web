@@ -4,7 +4,7 @@
 <!-- PopUp ("modal") 
 
 -->
-<div class="container">
+<div class="container pb-3">
     <div class="row">
         <div class="col">
             <h1>Editar {{$producto->nombre}}</h1>
