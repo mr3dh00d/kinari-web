@@ -69,9 +69,10 @@ Route::prefix('/carrito')->group(function () {
 /**
  * Rutas de checkout
  */
-// Route::get('/resumen', [Controllers\WebsiteController::class, 'resumen']);
-// Route::get('/seleccionar-direccion', [Controllers\WebsiteController::class, 'seleccionarDireccion']);
-// Route::get('/checkout', [Controllers\WebsiteController::class, 'checkout']);
+Route::get('/resumen', [Controllers\WebsiteController::class, 'resumen'])->middleware(['cartNotEmpty']);
+Route::get('/datos-personales', [Controllers\WebsiteController::class, 'datosPersonales'])->middleware(['cartNotEmpty']);
+Route::post('/datos-personales', [Controllers\WebsiteController::class, 'setDatosPersonales'])->middleware(['cartNotEmpty']);
+Route::get('/checkout', [Controllers\WebsiteController::class, 'checkout'])->middleware(['cartNotEmpty']);
 // Route::get('/resultado', [Controllers\WebsiteController::class, 'resultado']);
 
 

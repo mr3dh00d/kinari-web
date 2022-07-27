@@ -93,7 +93,7 @@
       </div>
     </div>
     
-    <button id="btn-carrito" class="btn-carrito btn">
+    <button id="btn-carrito" class="btn-carrito">
       <i class="fa-solid fa-cart-shopping"></i>
     </button>
 

@@ -8,6 +8,8 @@ const modalBootstrap = modal ? new Modal(modal) : null;
 const btnCarrito = document.querySelector('.btn-carrito');
 const root = modal ? ReactDOM.createRoot(document.querySelector('#modal-carrito .modal-body'))  : null;
 const csrf_token = document.querySelector('meta[name="csrf-token"]')?.content;
+const numberFormat = new Intl.NumberFormat('es-CL', {currency: 'CLP', style: 'currency'});
+
 
 if (btnCarrito){
     btnCarrito.addEventListener('click', btnCarritoClick);
@@ -34,14 +36,36 @@ function UpdateCart(){
 
 }
 
-function renderInCart(content){
+function renderInCart(response){
+    let contenido = response.contenido;
     let result = [];
-    Object.entries(content).forEach(entry => {
+    let items = [];
+    
+    Object.entries(contenido).forEach(entry => {
         const [key, item] = entry;
-        result.push(<FilaCarrito key={key} item={item}/>);
+        items.push(<FilaCarrito key={key} item={item}/>);
     });
 
-    if(Object.entries(content).length == 0){
+    if(items.length > 0){
+        result.push(
+            <div key={0} className="items-carrito">
+                {items}
+            </div>
+        );
+        result.push(
+            <div key={1} className="row justify-items-between">
+                <div className="col-12 text-end p-0 subtotal">
+                    Total:
+                    <span className="ms-3 ff-kaushan">
+                        {numberFormat.format(response.subtotal)}
+                    </span>
+                </div>
+                <a className="col-12 ff-kaushan text-center mt-2 py-1 btn-pagar" href='/resumen'>
+                    Pagar
+                </a>
+            </div>
+        );
+    }else{
         result.push(
             <div
                 key={0}
