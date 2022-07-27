@@ -23,14 +23,27 @@ Route::domain('admin.' . env('APP_URL'))->group(function () {
     Route::middleware(['is_admin'])->group(function () {
         Route::get('/', [Controllers\AdminPanelController::class, 'index']);
         Route::resource('/carrusel', Controllers\CarruselController::class);
-        Route::resource('/productos', Controllers\ProductsController::class);
-        Route::post('/productos/cambiar-orden', [Controllers\ProductsController::class, 'cambiarOrden']);
+
         Route::resource('/secciones', Controllers\SecctionsController::class);
         Route::post('/secciones/cambiar-orden', [Controllers\SecctionsController::class, 'cambiarOrden']);
+
+        Route::resource('/productos', Controllers\ProductsController::class);
+        Route::post('/productos/cambiar-orden', [Controllers\ProductsController::class, 'cambiarOrden']);
+
+        Route::get('/pedidos', [Controllers\PedidoController::class, 'pedidosTodos']);
+        Route::get('/nuevos-pedidos', [Controllers\PedidoController::class, 'pedidosNuevos']);
         
-        // Route::get('/settings', function () {
-        //     return view('building-prueba');
-        // });
+        Route::prefix('configuracion')->group(function () {
+            Route::get('/', [Controllers\ConfiguracionController::class, 'index']);
+
+            Route::post('/obtenerSuperUsuario', [Controllers\ConfiguracionController::class, 'obtenerSuperUsuario']);
+            Route::post('/guardarSuperUsuario', [Controllers\ConfiguracionController::class, 'guardarSuperUsuario']);
+            Route::post('/eliminarSuperUsuario', [Controllers\ConfiguracionController::class, 'eliminarSuperUsuario']);
+
+            Route::post('/obtenerRangos', [Controllers\ConfiguracionController::class, 'obtenerRangos']);
+            Route::post('/guardarRangos', [Controllers\ConfiguracionController::class, 'guardarRangos']);
+            Route::post('/eliminarRangos', [Controllers\ConfiguracionController::class, 'eliminarRangos']);
+        });
         
         // Route::get('/carrusel', function () {
         //     return view('carrusel');

@@ -4,6 +4,14 @@
 
 @section('idBody', 'home')
 
+@section('metatags')
+  <meta name="title" content="Kinari - Sushi Bar | El mejor Sushi de Santiago">
+  <meta name="author" content="Team Bocchi" />
+  <meta name="description" content="Garantizamos la entrega de nuestros productos de acuerdo a la descripción de nuestro menu. Todas nuestras promociones son por tiempo limitado y varíaran los precios sin previo aviso.">
+  <meta name="keywords" content="venta oline sushi, sushi chile, kinari sushi bar, kianrisushibar, kinari sushibar, kinari sushi, kianri bar, sushi kinari bar, sushi, venta online, kinari sushi lovers, sushi lovers, sushi kinari lovers">
+  <meta name="robots" content="index,follow">
+@endsection
+
 @section('header')
   <header>
     @include('website.elements.navbar')

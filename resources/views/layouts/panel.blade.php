@@ -25,14 +25,22 @@
                         <i class="fa-solid fa-bowl-food"></i>
                         <span class="nav_name">Productos</span>
                     </a>
+                    <a href="/nuevos-pedidos" class="nav_link">
+                        <i class="fa-solid fa-file-pen"></i>
+                        <span class="nav_name">Nuevos pedidos</span>
+                    </a>
+                    <a href="/pedidos" class="nav_link">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="nav_name">Pedidos</span>
+                    </a>
                     {{-- <a href="/carrusel" class="nav_link">
                         <i class="fa-brands fa-buy-n-large"></i>
                         <span class="nav_name">Carrusel</span>
                     </a> --}}
-                    {{-- <a href="/settings" class="nav_link"> 
+                    <a href="/configuracion" class="nav_link"> 
                         <i class="fa-solid fa-gear"></i>
                         <span class="nav_name">Configuración</span>
-                    </a> --}}
+                    </a>
                     <form action="/logout" method="post" name="logout">
                         @csrf
                         <button type="submit" class="nav_link">

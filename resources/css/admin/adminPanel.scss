@@ -215,6 +215,11 @@ body#body-pd.body-pd, #body-pd .body-pd {
         text-align: center;
     }
 
+    .btn-primary {
+        background-color: var(--first-color);
+        border: 0;
+    }
+
     .btn-circle.btn-sm {
         width: 2rem;
         height: 2rem;
@@ -268,4 +273,23 @@ body#body-pd.body-pd, #body-pd .body-pd {
         height: 3rem;
         background-size: 3rem;
     } */
+
+    #setting-app input.form-control, #setting-app form button{
+        border-radius: 0;
+    }
+    #setting-app form button{
+        background-color: var(--first-color);
+    }
+
+    .animated-loading{
+        animation: loading 1.5s linear infinite;
+    }
+
+}
+
+@keyframes loading {
+    to{
+        transform: rotate(360deg);
+    }
+
 }
