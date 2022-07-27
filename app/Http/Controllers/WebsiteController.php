@@ -97,33 +97,48 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function datosPersonales(){
+    public function datosPersonales(Request $request){
+        // $request->session()->pull('personal-data');
         return view('website.pago.datos-personales');
     }
 
     public function setDatosPersonales(Request $request){
+        $request->validate([
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'correo' => 'required',
+            'celular' => 'required|min:9|max:9',
+            'calle' => 'required',
+            'numero' => 'required',
+            'comuna' => 'required',
+        ]);
         $cliente = $request->validate([
             'nombre' => 'required',
             'apellido' => 'required',
             'correo' => 'required',
-            'celular' => 'required'
+            'celular' => 'required|min:9|max:9'
         ]);
         $direccion = $request->validate([
             'calle' => 'required',
             'numero' => 'required',
-            'comuna' => 'required'
+            'comuna' => 'required',
         ]);
         try {
             $queryDestino = join(" ", $direccion);
             $destino = $this->getPlaceSearch("https://maps.googleapis.com/maps/api/place/textsearch/json?query=$queryDestino");
-            $direccion = join(", ", array_slice(explode(", ", $destino['address']), 0, 2));
+            $direccion = [
+                'calle' => explode(" ", array_slice(explode(", ", $destino['address']), 0, 1)[0])[0],
+                'numero' => explode(" ", array_slice(explode(", ", $destino['address']), 0, 1)[0])[1],
+                'comuna' => array_slice(explode(", ", $destino['address']), 1, 2)[0],
+                'departamento' => $request->get('departamento')
+            ];
             $destinoLocation = $destino['location'];
             $queryOrigen = env('LOCAL_ADDRESS', '');
             $origen = $this->getPlaceSearch("https://maps.googleapis.com/maps/api/place/textsearch/json?query=$queryOrigen")['location'];
             $distancia = $this->getDistance("https://maps.googleapis.com/maps/api/distancematrix/json?destinations=$destinoLocation&origins=$origen");
         } catch (\Throwable $th) {
             return back()->withInput()->withErrors([
-                'message' => 'No fue posible encontrar la dirección indicada',
+                'message' => 'No fue posible encontrar la dirección indicada', // $th->getMessage(),
             ]);
         }
         $request->session()->put('personal-data', [
@@ -138,7 +153,10 @@ class WebsiteController extends Controller
         if (!$request->session()->has('personal-data')) {
             return redirect()->back();
         }
-        return view('website.pago.checkout');
+        return view('website.pago.checkout', [
+            'carrito' => Cart::class,
+            'personalData' => $request->session()->get('personal-data'),
+        ]);
     }
     
     public function resultado(){

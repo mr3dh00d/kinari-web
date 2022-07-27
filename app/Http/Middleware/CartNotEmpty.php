@@ -19,6 +19,6 @@ class CartNotEmpty
     {
         if(!Cart::isEmpty())
             return $next($request);
-        return redirect()->back();
+        return redirect('/carta');
     }
 }

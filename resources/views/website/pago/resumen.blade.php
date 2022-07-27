@@ -12,7 +12,7 @@
 
 @section('content')
 <div id="content-wrap">
-  <div id="resumen" class="container my-3">
+  <div class="container my-3">
     <div class="row">
       <div class="col text-center ff-kaushan">
         <h1>Resumen</h1>
